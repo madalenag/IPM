@@ -46,7 +46,7 @@ h1 {
 #orders {
 	position: absolute;
 	top: 0.5cm;
-	right: 0.1cm;
+	right: 0.2cm;
 }
 
 #localization {
@@ -75,6 +75,16 @@ h1 {
 	float:right;
 }
 
+#lockClock {
+	position: relative;
+	top: 1.0cm;
+	text-align: center;
+	font-family: "Ubuntu";
+	font-size: 140%;
+	font-weight: 0;
+	color:#fff;
+	float:center;
+}
 
 #scrollButton {
 	background-color: #000;
@@ -84,4 +94,24 @@ h1 {
 	top: 0.53in;
 	right: -0.3cm;
 	border-radius:3px;
+}
+
+#unlock {
+	width: 0.75cm;
+	height: 0.8cm;	
+	position: absolute;
+	bottom: 0.2cm;
+	left: 38%;
+	border-radius:3px;	
+}
+
+#date {
+	position: relative;
+	top: 1.0cm;
+	text-align: center;
+	font-family: "Ubuntu";
+	font-size: 80%;
+	font-weight: 0;
+	bottom: 0.2cm;
+	color:#a3a3a3;	
 }
