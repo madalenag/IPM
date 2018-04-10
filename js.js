@@ -6,22 +6,21 @@ function checkTime(i) {
   return i;
 }
 
-
 function checkDate(i) {
-  if (i == 0) 
-  	i = "Seg";
-  if (i == 0) 
-  	i = "Ter";
-  if (i == 0) 
-  	i = "Qua";
-  if (i == 0) 
-  	i = "Qui";
-  if (i == 0) 
-  	i = "Sex";
-  if (i == 0) 
-  	i = "Sab";
-  if (i == 0) 
-  	i = "Dom";
+  if (i == 0)
+    i = "Dom";
+  if (i == 1)
+    i = "Seg";
+  if (i == 2)
+    i = "Ter";
+  if (i == 3)
+    i = "Qua";
+  if (i == 4)
+    i = "Qui";
+  if (i == 5)
+    i = "Sex";
+  if (i == 6)
+    i = "Sab";
   return i;
 }
 
@@ -29,18 +28,10 @@ function checkDate(i) {
 function startDate() {
 	var date = new Date();
 	var day = date.getDate();
-	var month = date.getMonth() + 1;
-	var weekday = checkDate(date.getDay());
+	var weekday = date.getDay();
+	var month = date.getMonth();
+	weekday = checkDate(weekday);
 	document.getElementById("date").innerHTML = weekday + ", " + day + "/" + month;
-	var d = setDate(20);
-}
-
-
-function startDate() {
-	var date = new Date();
-	var day = date.getDate();
-	var month = date.getDay();
-	document.getElementById("date").innerHTML = day + "/" + month;
 }
 
 
@@ -63,7 +54,7 @@ function startLockTime() {
   	h = checkTime(h);
 	m = checkTime(m);
 	document.getElementById("lockClock").innerHTML = h + ":" + m;
-	var t = setTimeout(startTime, 500);
+	var n = setTimeout(startLockTime, 500);
 }
 
 function goBack() {

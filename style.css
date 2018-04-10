@@ -25,9 +25,9 @@ h1 {
 #status_bar {
 	height: 15px;
 	width: 101px;
-	font-family: "Arial";
+	font-family: "Ubuntu";
 	font-size: 80%;
-	font-weight: 600;
+	font-weight: 500;
 	color:#a3a3a3;
 
 }
