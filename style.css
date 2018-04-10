@@ -1,0 +1,93 @@
+/* Estilo CSS */
+body
+{
+	background-repeat: no-repeat;
+	background-size: cover;
+	background:url('./assets/background.jpg');
+}
+
+h1 {
+	color:#000;
+}
+
+.main_screen {
+	margin: auto;
+	background:url('./assets/black.jpg');
+	background-size: cover;
+	margin-top: 2in;
+	border-style: solid;
+	border-radius: 8px;
+	position: relative;
+	width: 1.1in;
+	height: 1.4in;
+}
+
+#status_bar {
+	height: 15px;
+	width: 101px;
+	font-family: "Arial";
+	font-size: 80%;
+	font-weight: 600;
+	color:#a3a3a3;
+
+}
+
+.imgclass {
+	width: 1.2cm;
+	height: 1.3cm;	
+}
+
+#notifications {
+	position: absolute;
+	top: 0.5cm;
+	left: 0cm;
+}
+
+#newNotifications {
+	position: absolute;
+	width: 20.2cm;
+	height: 40.3cm;	
+}
+
+#orders {
+	position: absolute;
+	top: 0.5cm;
+	right: 0.1cm;
+}
+
+#localization {
+	position: absolute;
+	bottom: 0.1cm;
+	left: 0cm;
+}
+
+#settings {
+	position: absolute;
+	bottom: 0.1cm;
+	right: 0.1cm;
+}
+
+#backButton {
+	background-color: #000;
+	width: 0.3cm;
+	height: 0.5cm;
+	position: absolute;
+	top: 0.2cm;
+	left: -0.3cm;
+	border-radius:3px;
+}
+
+#clock {
+	float:right;
+}
+
+
+#scrollButton {
+	background-color: #000;
+	width: 0.3cm;
+	height: 0.8cm;
+	position: absolute;
+	top: 0.53in;
+	right: -0.3cm;
+	border-radius:3px;
+}
