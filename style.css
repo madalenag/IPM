@@ -1,9 +1,12 @@
 /* Estilo CSS */
 body
 {
+	background-color: white;
 	background-repeat: no-repeat;
-	background-size: cover;
-	background:url('./assets/background.jpg');
+	background-size: 2.7in; 
+	background-position: center;
+	margin-bottom: 2.5in;
+	font-family: "Ubuntu";
 }
 
 h1 {
@@ -12,14 +15,26 @@ h1 {
 
 .main_screen {
 	margin: auto;
-	background:url('./assets/black.jpg');
+	background-color: black;
 	background-size: cover;
-	margin-top: 2in;
+	margin-top: 2.6in;
+	margin-left: 6.42in;
 	border-style: solid;
-	border-radius: 8px;
-	position: relative;
+	border-radius: 15px;
+	position: absolute;
 	width: 1.1in;
 	height: 1.4in;
+	z-index: 1;
+}
+
+#watch {
+	margin: auto;
+	position: absolute;
+	margin-top: 1.93in;
+	margin-left: 5.72in;
+	width: 2.66in;
+	height: 2.77in;
+	z-index: -2;
 }
 
 #status_bar {
@@ -33,41 +48,41 @@ h1 {
 }
 
 .imgclass {
-	width: 1.2cm;
-	height: 1.3cm;	
+	width: 1.1cm;
+	height: 1.2cm;	
 }
 
 #notifications {
 	position: absolute;
 	top: 0.5cm;
-	left: 0cm;
+	left: 0.2cm;
 }
 
 #orders {
 	position: absolute;
 	top: 0.5cm;
-	right: 0.2cm;
+	right: 0.3cm;
 }
 
 #localization {
 	position: absolute;
-	bottom: 0.1cm;
-	left: 0cm;
+	bottom: 0.2cm;
+	left: 0.2cm;
 }
 
 #settings {
 	position: absolute;
-	bottom: 0.1cm;
-	right: 0.1cm;
+	bottom: 0.2cm;
+	right: 0.2cm;
 }
 
 #backButton {
-	background-color: #000;
+	background-color: #303030;
 	width: 0.3cm;
 	height: 0.5cm;
 	position: absolute;
 	top: 0.2cm;
-	left: -0.3cm;
+	left: -0.5cm;
 	border-radius:3px;
 }
 
@@ -114,4 +129,68 @@ h1 {
 	font-weight: 0;
 	bottom: 0.2cm;
 	color:#a3a3a3;	
+}
+
+.scrollbar {
+	max-width: 1.1in;
+	max-height: 1.2in;
+  overflow-y: scroll;
+}
+
+#scrollbar-style::-moz-scrollbar {
+    width: 6px;
+		border-radius: 20px;
+}
+
+#scrollbar-style::-moz-scrollbar-thumb {
+		border-radius: 10px;
+		background-color: #101010;
+}
+
+#scrollbar-style::-moz-scrollbar-track {
+		border-radius: 500px;
+    -webkit-box-shadow: inset 0 0 6px rgba(168,168,168,1);
+    background-color: #A8A8A8;
+}
+
+
+#scrollbar-style::-webkit-scrollbar {
+    width: 6px;
+		border-radius: 20px;
+}
+
+#scrollbar-style::-webkit-scrollbar-thumb {
+		border-radius: 10px;
+		background-color: #101010;
+}
+
+
+#scrollbar-style::-webkit-scrollbar-track {
+		border-radius: 500px;
+    -webkit-box-shadow: inset 0 0 6px rgba(168,168,168,1);
+    background-color: #A8A8A8;
+}
+
+.menuButtons {
+	width: 1in;
+	background-color:	#282828;
+	border: none;
+	color: white;
+	padding: 0.1in;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 0.14in;
+	margin: 4px 2px;
+	border-radius: 10px;
+}
+
+#scrollButton {
+	background-color: #000;
+	width: 0.3cm;
+	height: 0.8cm;
+	position: absolute;
+	top: 0.53in;
+	right: -0.3cm;
+	border-radius:3px;
 }
