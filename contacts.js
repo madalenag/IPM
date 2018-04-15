@@ -32,16 +32,16 @@ function showFriend (name) {
 
 
 function showRemovingButton (name) {
-    var btn = document.createElement("BUTTON"); 
+    var btn = document.createElement("BUTTON");
     var firstName = document.createTextNode(name);
     btn.appendChild(firstName);
 
     var att = document.createAttribute("class");
     att.value = "menuButtons";
     btn.setAttributeNode(att);
-    btn.setAttribute('onclick', 'changeVisibilityRemoving(name);');
+    btn.setAttribute('onclick', 'changeVisibilityRemoving(\'' + name + '\');');
     var scrollbar = document.getElementsByClassName("scrollbar")[0];
-    scrollbar.appendChild(btn);  
+    scrollbar.appendChild(btn);
 }
 
 
@@ -63,7 +63,7 @@ function changeVisibilityRemoving (name) {
   var att1 = document.createAttribute("class");
   att1.value = "option1";
   yes.setAttributeNode(att1);
-  yes.setAttribute('onclick', 'removeFriend(name);window.location.assign("localizate.html");');
+  yes.setAttribute('onclick', ' removeFriend(\'' + name + '\'); window.location.assign("localizate.html");');
   
   var att2 = document.createAttribute("class");
   att2.value = "option2";
@@ -95,12 +95,8 @@ function changeVisibilityAdding (name) {
   var att1 = document.createAttribute("class");
   att1.value = "option1";
   yes.setAttributeNode(att1);
-  yes.onclick = addFriend(name);
-  yes.setAttribute('onclick', 'window.location.assign("localizate.html");');
+  yes.setAttribute('onclick', ' addFriend(\'' + name + '\'); window.location.assign("localizate.html");');
 
-
-  //yes.setAttribute('onclick', 'addFriend("name");');
-  
   var att2 = document.createAttribute("class");
   att2.value = "option2";
   no.setAttributeNode(att2);
@@ -138,20 +134,14 @@ function showAll () {
 }
 
 
-function remove() {
-  var len, name;
-  var storedData = JSON.parse(localStorage.getItem("Data"));
-  len = storedData.length;
-
-  for (i = 0; i < len; i++) {
-    name = storedData[i];
-    showFriend(name);
-  }  
-}
-
 
 function removeFriend (name) {
   var storedData = JSON.parse(localStorage.getItem("Data"));
-  storedData.pop(name);
+  var i, len;
+  len = storedData.length;
+
+  var index = storedData.indexOf(name);
+  storedData.splice(index,1);
+
   loadData(storedData);
 }
