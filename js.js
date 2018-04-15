@@ -60,3 +60,9 @@ function startLockTime() {
 function goBack() {
   window.history.back();
 }
+
+function home() {
+  window.location = "lockscreen.html";
+}
+
+

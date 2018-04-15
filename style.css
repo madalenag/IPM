@@ -188,3 +188,133 @@ h1 {
 	margin: 4px 2px;
 	border-radius: 10px;
 }
+
+
+.option1 {
+	width: 1in;
+	background-color:	#282828;
+	border: none;
+	color: white;
+	padding: 0.1in;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 0.14in;
+	margin: 4px 5px;
+	border-radius: 10px;
+	position: relative;
+	margin-top:0.4in;
+}
+
+.option2 {
+	width: 1in;
+	background-color:	#282828;
+	border: none;
+	color: white;
+	padding: 0.1in;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 0.14in;
+	margin: 4px 5px;
+	border-radius: 10px;
+	position: relative;
+	margin-top:0in;	
+}
+
+#ativar {
+	position: absolute;
+	font-size: 0.15in;	
+	color:white;
+	margin-left: 0.1in;
+	margin-top: 0.2in;
+}
+
+#adicionar {
+	position: absolute;
+	font-size: 0.15in;	
+	color:white;
+	margin-left: 0.2in;
+	margin-top: 0.1in;
+}
+
+#remover {
+	position: absolute;
+	font-size: 0.15in;	
+	color:white;
+	margin-left: 0.2in;
+	margin-top: 0.1in;
+}
+
+#second {
+	position: absolute;
+	font-size: 0.15in;	
+	color:white;
+	margin-left: 0in;
+	margin-top: 0.04in;
+}
+
+.switch {
+	position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 17px;
+	margin-top: 0.2in;
+	margin-right:0.05in;
+}
+
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #a5a5a5;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 1px;
+  right:0px;
+  bottom: 1px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #4cd964;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 3px #3fba54;
+}
+
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(12.3px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 200px;
+}
+
+.slider.round:before {
+  border-radius: 100%;
+}
+
+.switchleft{
+	float:right;
+}
