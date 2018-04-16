@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="js.js"></script>
     <script src="contacts.js"></script>
+    <script src="localize.js"></script>
 
     <title>Interfaces Pessoa Máquina - iRave</title>
   </head>
@@ -22,13 +23,12 @@
 
       <div class="container">
           <div class="scrollbar" id="scrollbar-style">
-            <button class="menuButtons" onclick= "">Recinto</button>
-            <button class="menuButtons" onclick='window.location = "localizatePeople.html"'>Pessoas</button>
-            <button class="menuButtons" onclick="">WC</button>
-            <button class="menuButtons" onclick="">Restauração</button>
-            <button class="menuButtons" onclick="">Palcos</button>
-            <button class="menuButtons" onclick="">Emergências</button>
-            <button class="menuButtons" onclick='window.location.assign("alerts.html")'>Definições</button>
+            <button class="menuButtons" id="recintoButton" onclick='location.assign("fullMap.html")'><img class="menuIcons" id ="recintoIcon" src="./assets/icons/map.png">Recinto</button>
+            <button class="menuButtons" id="localizePersonButton" onclick='window.location = "localizatePeople.html"'><img class="menuIcons" id ="personIcon" src="./assets/icons/location.png">Pessoas</button>
+            <button class="menuButtons" id="wcButton" onclick='location.assign("WCMap.html")'><img class="menuIcons" id ="wcIcon" src="./assets/icons/bathroom.png">WC</button>
+            <button class="menuButtons" id="restauracaoButton" onclick='location.assign("restaurantMap.html")'><img class="menuIcons" id ="reaturantIcon" src="./assets/icons/cutlery.png">Restauração</button>
+            <button class="menuButtons" id="palcosButton" onclick='location.assign("stageMap.html")'><img class="menuIcons" id ="stageIcon" src="./assets/icons/spotlight.png">Palcos</button>
+            <button class="menuButtons" id="emergenciasButton" onclick='location.assign("emergencyMap.html")'><img class="menuIcons" id ="emergencyIcon" src="./assets/icons/ambulance.png">Emergências</button>
           </div>
       </div>
 

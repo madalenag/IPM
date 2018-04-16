@@ -3,7 +3,7 @@ body
 {
 	background-color: white;
 	background-repeat: no-repeat;
-	background-size: 2.7in; 
+	background-size: 2.7in;
 	background-position: center;
 	margin-bottom: 2.5in;
 	font-family: "Ubuntu";
@@ -44,12 +44,20 @@ h1 {
 	font-size: 80%;
 	font-weight: 500;
 	color:#a3a3a3;
+}
 
+#status_bar_Map {
+	height: 15px;
+	width: 101px;
+	font-family: "Ubuntu";
+	font-size: 80%;
+	font-weight: 500;
+	color: black;
 }
 
 .imgclass {
 	width: 1.1cm;
-	height: 1.2cm;	
+	height: 1.2cm;
 }
 
 #notifications {
@@ -68,6 +76,32 @@ h1 {
 	position: absolute;
 	bottom: 0.2cm;
 	left: 0.2cm;
+}
+
+#map {
+	border-radius: 15px;
+	position: absolute;
+	top: 0cm;
+	left: 0cm;
+	width: 1.12in;
+	height: 1.4in;
+	z-index: -6;
+}
+
+#target {
+	position: absolute;
+	top: 0px;
+  left: 0px;
+	visibility: hidden;
+	z-index: 4;
+}
+
+#pin {
+	position: absolute;
+	top: 0px;
+  left: 0px;
+	visibility: hidden;
+	z-index: 4;
 }
 
 #settings {
@@ -117,11 +151,11 @@ h1 {
 
 #unlock {
 	width: 0.75cm;
-	height: 0.8cm;	
+	height: 0.8cm;
 	position: absolute;
 	bottom: 0.2cm;
 	left: 38%;
-	border-radius:3px;	
+	border-radius:3px;
 }
 
 #date {
@@ -132,7 +166,7 @@ h1 {
 	font-size: 80%;
 	font-weight: 0;
 	bottom: 0.2cm;
-	color:#a3a3a3;	
+	color:#a3a3a3;
 }
 
 .scrollbar {
@@ -189,6 +223,11 @@ h1 {
 	border-radius: 10px;
 }
 
+.menuIcons {
+	width: 0.2in;
+	float: left;
+}
+
 
 .option1 {
 	width: 1in;
@@ -219,12 +258,12 @@ h1 {
 	margin: 4px 5px;
 	border-radius: 10px;
 	position: relative;
-	margin-top:0in;	
+	margin-top:0in;
 }
 
 #ativar {
 	position: absolute;
-	font-size: 0.15in;	
+	font-size: 0.15in;
 	color:white;
 	margin-left: 0.1in;
 	margin-top: 0.2in;
@@ -232,7 +271,7 @@ h1 {
 
 #adicionar {
 	position: absolute;
-	font-size: 0.15in;	
+	font-size: 0.15in;
 	color:white;
 	margin-left: 0.2in;
 	margin-top: 0.1in;
@@ -240,7 +279,7 @@ h1 {
 
 #remover {
 	position: absolute;
-	font-size: 0.15in;	
+	font-size: 0.15in;
 	color:white;
 	margin-left: 0.2in;
 	margin-top: 0.1in;
@@ -248,7 +287,7 @@ h1 {
 
 #second {
 	position: absolute;
-	font-size: 0.15in;	
+	font-size: 0.15in;
 	color:white;
 	margin-left: 0in;
 	margin-top: 0.04in;
