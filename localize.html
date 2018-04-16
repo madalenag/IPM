@@ -12,24 +12,21 @@
 
 
 
-  <body onload="startTime(); showAddingButtons();">
+  <body onload="startTime(); showAll();">
 
     <div class="main_screen">
 
       <div id="status_bar">
         <div id="clock"></div>
       </div>
-      
 
       <div id="container">
-        <div class="scrollbar" id="scrollbar-hidden"> </div>
-
-        <div id="adicionar" style="visibility: hidden;"> Adicionar? </div>
+          <div class="scrollbar" id="scrollbar-style">
+          </div>
       </div>
 
-
-      <div id="backButton" onclick='window.location.assign("localizePeople.html")'> </div>
-      <div id="lockButton" onclick='window.location.assign("lockscreen.html")'> </div>
+      <div id="backButton" onclick='location.assign("localizePeople.html")'> </div>
+      <div id="lockButton" onclick='location.assign("lockscreen.html")'> </div>
 
     </div>
 
