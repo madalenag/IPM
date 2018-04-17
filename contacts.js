@@ -85,12 +85,12 @@ function changeVisibilityRemoving (name) {
   var att1 = document.createAttribute("class");
   att1.value = "option1";
   yes.setAttributeNode(att1);
-  yes.setAttribute('onclick', ' removeFriend(\'' + name + '\'); window.location.assign("localize.html");');
+  yes.setAttribute('onclick', ' removeFriend(\'' + name + '\'); window.location.assign("localizePeople.html");');
   
   var att2 = document.createAttribute("class");
   att2.value = "option2";
   no.setAttributeNode(att2);
-  no.setAttribute('onclick', 'window.location.assign("localize.html");');
+  no.setAttribute('onclick', 'window.location.assign("localizePeople.html");');
 
   var cont = document.getElementById("container");
   cont.appendChild(removerButton);
