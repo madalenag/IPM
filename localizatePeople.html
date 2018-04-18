@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="style.css">
+    <script src="js.js"></script>
+    <script src="contacts.js"></script>
+    <script src="localize.js"></script>
+
+    <title>Interfaces Pessoa Máquina - iRave</title>
+  </head>
+
+
+
+  <body onload="startTime();">
+
+    <div class="main_screen">
+
+      <div id="status_bar">
+        <div id="clock"></div>
+      </div>
+
+      <div class="container">
+          <div class="scrollbar" id="scrollbar-style">
+            <button class="menuButtons" id="addPersonButton" onclick='window.location = "addPerson.html"'>Adicionar</button>
+            <button class="menuButtons" id="removePersonButton" onclick='window.location = "removePerson.html"'>Remover</button>
+            <button class="menuButtons" id="localizatePersonButton" onclick='window.location = "localizate.html"'>Localizar</button>
+          </div>
+      </div>
+
+      <div id="backButton" onclick="goBack()"> </div>
+      <div id="lockButton" onclick='location.assign("lockscreen.html")'> </div>
+
+    </div>
+
+    <img id="watch" src="./assets/xlarge1-114924.jpg" draggable="false">
+
+  </body>
+</html>

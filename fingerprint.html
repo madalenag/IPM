@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fingerprint.css">
+    <script src="js.js"></script>
+    <script src="fingerprint.js"></script>
+
+    <title>Interfaces Pessoa Máquina - iRave</title>
+  </head>
+
+
+
+  <body onload="startTime();">
+
+    <div class="main_screen">
+
+      <div class="container">
+        <div class="fingerprintScreen">Posicione o seu dedo
+          <img id="fingerprint" onmousedown="fingerprintPress()" onmouseup="fingerprintRelease()" src="./assets/icons/fingerprint12White.png">
+        </div>
+      </div>
+
+      <!--<div id="backButton"> </div>
+      <div id="scrollButton"> </div>-->
+      <div id="lockButton" onclick='home()'> </div>
+
+    </div>
+
+    <img id="watch" src="./assets/xlarge1-114924.jpg" draggable="false">
+
+  </body>
+</html>

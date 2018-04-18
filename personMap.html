@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="style.css">
+    <script src="js.js"></script>
+
+    <title>Interfaces Pessoa Máquina - iRave</title>
+  </head>
+
+
+
+  <body onload="startTime();">
+
+    <div class="main_screen">
+
+      <div class="container">
+        <img id="map" src="./assets/mapaPNG.png">
+        <img id="pin" onload="positionSelfPin()" src="./assets/icons/blue-dot.png" width="18">
+        <img id="target" onload="positionPersonPin()" src="./assets/icons/placeholder.png" width="30">
+        <path d="M 1, 1">
+      </div>
+
+      <div id="backButton" onclick="goBack()"> </div>
+      <div id="lockButton" onclick='location.assign("lockscreen.html")'> </div>
+
+    </div>
+
+    <img id="watch" src="./assets/xlarge1-114924.jpg">
+
+  </body>
+</html>

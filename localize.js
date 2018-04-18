@@ -58,8 +58,8 @@ function positionWCPin() {
 function positionRestaurantPin() {
   var randomCoordinates = Math.floor((Math.random() * 3) + 1);
   if (randomCoordinates == 1) {
-    document.getElementById("target").style.left = "0.6cm";
-    document.getElementById("target").style.top = "2.1cm";
+    document.getElementById("target").style.left = "0.7cm";
+    document.getElementById("target").style.top = "1.7cm";
 
   }
   else if (randomCoordinates == 2) {
@@ -67,8 +67,8 @@ function positionRestaurantPin() {
     document.getElementById("target").style.top = "1cm";
   }
   else {
-    document.getElementById("target").style.left = "0.3cm";
-    document.getElementById("target").style.top = "2.4cm";
+    document.getElementById("target").style.left = "1cm";
+    document.getElementById("target").style.top = "0.5cm";
 
   }
   document.getElementById("target").style.visibility = "visible"; /*mudar aspeto dinamicamente*/

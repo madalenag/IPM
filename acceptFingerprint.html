@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fingerprint.css">
+    <script src="js.js"></script>
+
+    <title>Interfaces Pessoa Máquina - iRave</title>
+  </head>
+
+
+
+  <body onload="startTime();">
+
+    <div class="main_screen">
+
+      <div class="container">
+      		<div class="fingerprintAcceptDenyScreen">Sucesso
+            <img class="unlockImages" id="unlocked" src="./assets/icons/unlocked.png">
+            <img class="checkImages" id="checkMark" src="./assets/icons/check.png">
+          </div>
+      </div>
+        <script>setTimeout(function(){ window.location = "index.html" }, 2000);</script>
+      <!--<div id="backButton"> </div>
+      <div id="scrollButton"> </div>-->
+      <div id="lockButton" onclick='home()'> </div>
+
+    </div>
+
+    <img id="watch" src="./assets/xlarge1-114924.jpg" draggable="false">
+
+  </body>
+</html>
