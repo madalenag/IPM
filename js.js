@@ -65,4 +65,74 @@ function home() {
   window.location = "lockscreen.html";
 }
 
+function getScrollId(){
+  var scrollTop = document.getElementById("scrollbar-style").scrollTop;
+  var id;
+  if (scrollTop >= 0 && scrollTop <= 15){
+    id = 0;
+  }
+  if (scrollTop > 15 && scrollTop <= 30){
+    id = 1;
+  }
+  if (scrollTop > 30 && scrollTop <= 66){
+    id = 2;
+  }
+  if (scrollTop > 66 && scrollTop <= 100){
+    id = 3;
+  }
+  if (scrollTop > 100 && scrollTop <= 135){
+    id = 4;
+  }
+  if (scrollTop > 135 && scrollTop <= 170){
+    id = 5;
+  }
+  if (scrollTop > 170 && scrollTop <= 175){
+    id = 6;
+  }
+  if (scrollTop > 175 && scrollTop <= 250){
+    id = 7;
+  }
+  return id;
+}
+
+function scrollfunction(pai) {
+  var paiId = document.getElementById(pai);
+  console.log(paiId);
+  var len = paiId.children.length;
+  console.log(len);
+  id = getScrollId();
+  console.log(id);
+  console.log(document.getElementById("scrollbar-style").scrollTop);
+  if(id == 0){
+    paiId.children[1].className = "menuButtonscenter";
+    paiId.children[2].className = "menuButtons";
+    paiId.children[1].children[0].style.float = "left";
+    paiId.children[2].children[0].style.float = "none";
+    paiId.children[1].children[1].style.display = "inline-block";
+    paiId.children[2].children[1].style.display = "none";
+  }
+
+  else if(id === len - 1){
+    paiId.children[len - 1].className = "menuButtonscenter";
+    paiId.children[len - 2].className = "menuButtons";
+    paiId.children[len - 1].children[0].style.float = "left";
+    paiId.children[len - 2].children[0].style.float = "none";
+    paiId.children[len - 1].children[1].style.display = "inline-block";
+    paiId.children[len - 2].children[1].style.display = "none";
+  }
+
+  else{
+    paiId.children[id].className = "menuButtonscenter";
+    paiId.children[id - 1].className = "menuButtons";
+    paiId.children[id + 1].className = "menuButtons";
+    paiId.children[id].children[0].style.float = "left";
+    paiId.children[id - 1].children[0].style.float = "none";
+    paiId.children[id + 1].children[0].style.float = "none";
+    paiId.children[id].children[1].style.display = "inline-block";
+    paiId.children[id - 1].children[1].style.display = "none";
+    paiId.children[id + 1].children[1].style.display = "none";
+  }
+
+}
+
 

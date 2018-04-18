@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="style.css">
+    <script src="js.js"></script>
+    <script src="contacts.js"></script>
+    <script src="localize.js"></script>
+
+    <title>Interfaces Pessoa Máquina - iRave</title>
+  </head>
+
+
+
+  <body onload="startTime();">
+
+    <div class="main_screen">
+
+      <div id="status_bar">
+        <div id="clock"></div>
+      </div>
+
+      <div class="container">
+          <div class="scrollbar" id="scrollbar-style">
+            <button class="menuButtons1" id="hamButton" onclick='location.assign("restaurantMap.html")'><img class="menuIcons" style="float: left" id ="hamIcon" src="./assets/icons/ham.png">Burguer</button>
+
+            <button class="menuButtons1" id="hotButton" onclick='location.assign("restaurantMap.html")'><img class="menuIcons" style="float: left" id ="hotIcon" src="./assets/icons/hotdog.png">HotDog</button>
+
+            <button class="menuButtons1" id="pizzaButton" onclick='location.assign("restaurantMap.html")'><img class="menuIcons" style="float: left" id ="pizzaIcon" src="./assets/icons/pizza.png">Pizza</button>
+          </div>
+      </div>
+
+      <div id="backButton" onclick="goBack()"> </div>
+      <div id="lockButton" onclick='window.location.assign("lockscreen.html")'> </div>
+
+    </div>
+
+    <img id="watch" src="./assets/xlarge1-114924.jpg">
+
+  </body>
+</html>

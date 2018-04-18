@@ -30,7 +30,7 @@ function showFriend (name) {
     btn.appendChild(firstName);
 
     var att = document.createAttribute("class");
-    att.value = "menuButtons";
+    att.value = "menuButtons1";
     btn.setAttributeNode(att);
     btn.setAttribute('onclick', 'window.location.assign("map.html");');
     var scrollbar = document.getElementsByClassName("scrollbar")[0];
@@ -44,7 +44,7 @@ function showRemovingButton (name) {
     btn.appendChild(firstName);
 
     var att = document.createAttribute("class");
-    att.value = "menuButtons";
+    att.value = "menuButtons1";
     btn.setAttributeNode(att);
     btn.setAttribute('onclick', 'changeVisibilityRemoving(\'' + name + '\');');
     var scrollbar = document.getElementsByClassName("scrollbar")[0];
