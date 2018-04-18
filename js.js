@@ -86,21 +86,45 @@ function getScrollId(){
   if (scrollTop > 135 && scrollTop <= 170){
     id = 5;
   }
-  if (scrollTop > 170 && scrollTop <= 175){
+  if (scrollTop > 170 && scrollTop <= 207){
     id = 6;
   }
-  if (scrollTop > 175 && scrollTop <= 250){
+  if (scrollTop > 207 && scrollTop <= 235){
     id = 7;
+  }
+  if (scrollTop > 235 && scrollTop <= 300){
+    id = 8;
   }
   return id;
 }
 
-function scrollfunction(pai) {
+function getScrollIdRest(){
+  var scrollTop = document.getElementById("scrollbar-style").scrollTop;
+  var id;
+  if (scrollTop >= 0 && scrollTop <= 15){
+    id = 0;
+  }
+  if (scrollTop > 15 && scrollTop <= 30){
+    id = 1;
+  }
+  if (scrollTop > 30 && scrollTop <= 66){
+    id = 2;
+  }
+  if (scrollTop > 66 && scrollTop <= 100){
+    id = 3;
+  }
+  if (scrollTop > 100 && scrollTop <= 135){
+    id = 4;
+  }
+  return id;
+}
+
+function scrollfunction(pai, id) {
   var paiId = document.getElementById(pai);
   console.log(paiId);
   var len = paiId.children.length;
   console.log(len);
-  id = getScrollId();
+  //id = getScrollId();
   console.log(id);
   console.log(document.getElementById("scrollbar-style").scrollTop);
   if(id == 0){
@@ -133,6 +157,20 @@ function scrollfunction(pai) {
     paiId.children[id + 1].children[1].style.display = "none";
   }
 
+}
+
+function scrollUps(){
+  var scrollUp = document.getElementById("scrollbar-style").scrollTop;
+  console.log(scrollUp);
+  if (scrollUp > 0){
+    document.getElementById("scrollbar-style").scrollTop = scrollUp - 35; 
+  }
+}
+
+function scrollDowns(){
+  var scrollDown = document.getElementById("scrollbar-style").scrollTop;
+  console.log(scrollDown);
+  document.getElementById("scrollbar-style").scrollTop = scrollDown + 35; 
 }
 
 

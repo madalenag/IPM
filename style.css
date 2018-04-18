@@ -135,11 +135,25 @@ h1 {
 
 
 #scrollButtonUp {
-	background-color: black;
+	background-image: url("./assets/icons/downarrow.png");
+	background-size: cover;
+	transform: rotate(180deg);
 	width: 0.3cm;
 	height: 0.3cm;
 	position: absolute;
 	top: 0.2cm;
+	right: -0.65cm;
+	border-radius:3px;
+	/*opacity: 0;*/
+}
+
+#scrollButtonDown {
+	background-image: url("./assets/icons/downarrow.png");
+	background-size: cover;
+	width: 0.3cm;
+	height: 0.3cm;
+	position: absolute;
+	top: 1.35cm;
 	right: -0.65cm;
 	border-radius:3px;
 	/*opacity: 0;*/
