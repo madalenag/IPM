@@ -12,22 +12,26 @@
 
 
 
-  <body onload="startTime(); showAll(); checkLocation();">
+  <body onload="startTime();">
 
     <div class="main_screen">
 
       <div id="status_bar">
         <div id="clock"></div>
-        <img class ="imgstatus" id="alerts" src="./assets/icons/pin.png">
       </div>
+      
 
       <div id="container">
-          <div class="scrollbar" id="scrollbar-style">
-          </div>
+
+        <div id="ativarloc"> Ative a sua localização em 'Opções': </div>
+        <p>
+        <button class="menuButtonscenter" id="ativarbutton" onclick='location.assign("alerts.html")'><img class="menuIcons" src="./assets/icons/gears.png"> Opções </button>
+        </p><
       </div>
 
-      <div id="backButton" onclick='location.assign("localizePeople.html")'> </div>
-      <div id="lockButton" onclick='location.assign("lockscreen.html")'> </div>
+
+      <div id="backButton" onclick='goBack();'> </div>
+      <div id="lockButton" onclick='window.location.assign("lockscreen.html")'> </div>
 
     </div>
 

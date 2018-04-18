@@ -7,30 +7,32 @@
     <script src="js.js"></script>
 
     <title>Interfaces Pessoa Máquina - iRave</title>
+  
   </head>
 
 
 
-  <body onload="startTime();">
+  <body onload="startTime(); load();">
 
     <div class="main_screen">
-
       <div id="status_bar">
         <div id="clock"></div>
+        <img class ="imgstatus" id="alerts" src="./assets/icons/pin.png">
       </div>
 
       <div id="container">
-      	<div id="ativar">Ativar <div id="second"> Localização </div> </br> </div>
-      	<div class="switchleft">
-			<label class="switch">
-  				<input type="checkbox" id="check" onclick="checkFunction();">
-  				<span class="slider round"></span>
-			</label>
-		</div>
+        <div id="ativar">Ativar <div id="second"> Localização </div> </br> </div>
+      
+      <div class="switchforleft">
+        <label class="switch">
+            <input type="checkbox" id="checkb" checked="checked" onclick="save();">
+            <span class="slider round"></span>
+        </label>
       </div>
+    </div>
 
-      <div id="backButton" onclick="goBack()"> </div>
-      <div id="lockButton" onclick='location.assign("lockscreen.html")'> </div>
+    <div id="backButton" onclick="goBack()"> </div>
+    <div id="lockButton" onclick='location.assign("lockscreen.html")'> </div>
 
     </div>
 

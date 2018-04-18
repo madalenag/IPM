@@ -35,6 +35,14 @@ function startDate() {
 }
 
 
+function checkOnClickLocation(name) {
+  var location_active = JSON.parse(localStorage.getItem('location_active'));
+  if (location_active == "true")
+    location.assign(name);
+  else
+    location.assign("desativada.html");
+}
+
 
 function startTime() {
 	var date = new Date();
@@ -173,4 +181,61 @@ function scrollDowns(){
   document.getElementById("scrollbar-style").scrollTop = scrollDown + 35; 
 }
 
+var location_active = "false";
 
+
+function checkLocation() {
+  var location_active = JSON.parse(localStorage.getItem('location_active'));
+  var alert = document.getElementById('alerts');
+  
+  if (location_active == "true") {
+    alert.style.visibility = "visible";
+  }
+  else {
+    alert.style.visibility = "hidden";
+  }
+}
+
+function checkVisibility() {
+  var checked = JSON.parse(localStorage.getItem('checkb'));
+  var check = document.getElementById('checkb').checked 
+  var alert = document.getElementById('alerts');
+
+  if (check === true) {
+    alert.style.visibility = "visible";
+    location_active = "true";
+  }
+  else {
+    alert.style.visibility = "hidden";
+    location_active = "false";
+  }
+  localStorage.setItem("location_active", JSON.stringify(location_active));
+}
+
+
+var flag = "0";
+
+
+function save() {
+  if (flag == "0") {
+    flag = "1";
+    localStorage.setItem("flagg", JSON.stringify(flag));
+  }
+  
+  var checkbox = document.getElementById('checkb');
+  localStorage.setItem('checkb', checkbox.checked);
+  checkVisibility();
+}
+
+
+
+function load() {
+  var flag = JSON.parse(localStorage.getItem("flagg"));
+
+  if (flag == "1") {
+    var checked = JSON.parse(localStorage.getItem('checkb'));
+    document.getElementById('checkb').checked = checked;
+  }
+
+  checkVisibility();
+}

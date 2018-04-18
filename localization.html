@@ -13,29 +13,30 @@
 
 
 
-  <body onload="startTime();">
+  <body onload="startTime(); checkLocation();">
 
     <div class="main_screen">
 
       <div id="status_bar">
         <div id="clock"></div>
+        <img class ="imgstatus" id="alerts" src="./assets/icons/pin.png">
       </div>
 
       <div class="container">
           <div class="scrollbar" id="scrollbar-style" onscroll="scrollfunction('scrollbar-style', getScrollId());">
             <button class="menuButtons" style="visibility: hidden"> <img class="menuIcons" style="float: left" id ="recintoIcon" src="./assets/icons/map.png"> <div class="nomes" style="display: none"> Recinto </div> </button>
 
-            <button class="menuButtonscenter" id="recintoButton" onclick='location.assign("fullMap.html")'><img class="menuIcons" style="float: left" id ="recintoIcon" src="./assets/icons/map.png"> <div class="nomes" style="display: inline-block"> Recinto </div> </button>
+            <button class="menuButtonscenter" id="recintoButton" onclick='checkOnClickLocation("fullMap.html");'><img class="menuIcons" style="float: left" id ="recintoIcon" src="./assets/icons/map.png"> <div class="nomes" style="display: inline-block"> Recinto </div> </button>
 
-            <button class="menuButtons" id="localizePersonButton" onclick='window.location = "localizePeople.html"'><img class="menuIcons" id ="personIcon" src="./assets/icons/users.png"> <div class="nomes"> Pessoas </div> </button>
+            <button class="menuButtons" id="localizePersonButton" onclick='checkOnClickLocation("localizePeople.html");'><img class="menuIcons" id ="personIcon" src="./assets/icons/users.png"> <div class="nomes"> Pessoas </div> </button>
 
-            <button class="menuButtons" id="wcButton" onclick='location.assign("WCMap.html")'><img class="menuIcons" id ="wcIcon" src="./assets/icons/bathroom.png"> <div class="nomes"> WC </div> </button>
+            <button class="menuButtons" id="wcButton" onclick='checkOnClickLocation("WCMap.html");'><img class="menuIcons" id ="wcIcon" src="./assets/icons/bathroom.png"> <div class="nomes"> WC </div> </button>
 
-            <button class="menuButtons" id="restauracaoButton" onclick='location.assign("menuRestaurante.html")'><img class="menuIcons" id ="reaturantIcon" src="./assets/icons/cutlery.png"> <div class="nomes"> Refeição </div> </button>
+            <button class="menuButtons" id="restauracaoButton" onclick='checkOnClickLocation("menuRestaurante.html");'><img class="menuIcons" id ="reaturantIcon" src="./assets/icons/cutlery.png"> <div class="nomes"> Refeição </div> </button>
 
-            <button class="menuButtons" id="palcosButton" onclick='location.assign("stageMap.html")'><img class="menuIcons" id ="stageIcon" src="./assets/icons/spotlight.png"> <div class="nomes"> Palcos </div> </button>
+            <button class="menuButtons" id="palcosButton" onclick='checkOnClickLocation("stageMap.html");'><img class="menuIcons" id ="stageIcon" src="./assets/icons/spotlight.png"> <div class="nomes"> Palcos </div> </button>
 
-            <button class="menuButtons" id="emergenciasButton" onclick='location.assign("emergencyMap.html")'><img class="menuIcons" id ="emergencyIcon" src="./assets/icons/ambulance.png"> <div class="nomes"> SOS </div> </button>
+            <button class="menuButtons" id="emergenciasButton" onclick='checkOnClickLocation("emergencyMap.html");'><img class="menuIcons" id ="emergencyIcon" src="./assets/icons/ambulance.png"> <div class="nomes"> SOS </div> </button>
 
             <button class="menuButtons" id="DefButton" onclick='location.assign("alerts.html")'><img class="menuIcons" id ="DefIcon" src="./assets/icons/gears.png"> <div class="nomes"> Opções </div> </button>
 
@@ -50,7 +51,7 @@
 
     </div>
 
-    <img id="watch" src="./assets/xlarge1-114924.jpg">
+    <img id="watch" src="./assets/xlarge1-114924.jpg" draggable="false">
 
   </body>
 </html>

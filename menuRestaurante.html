@@ -13,12 +13,13 @@
 
 
 
-  <body onload="startTime();">
+  <body onload="startTime(); checkLocation();">
 
     <div class="main_screen">
 
       <div id="status_bar">
         <div id="clock"></div>
+        <img class ="imgstatus" id="alerts" src="./assets/icons/pin.png">
       </div>
 
       <div class="container">
@@ -43,7 +44,7 @@
 
     </div>
 
-    <img id="watch" src="./assets/xlarge1-114924.jpg">
+    <img id="watch" src="./assets/xlarge1-114924.jpg" draggable="false">
 
   </body>
 </html>
