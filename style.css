@@ -357,6 +357,7 @@ h1 {
 }
 
 
+
 #ativarloc {
 	position: absolute;
 	font-size: 0.14in;
@@ -379,6 +380,10 @@ h1 {
 	color:white;
 	margin-left: 0in;
 	margin-top: 0.04in;
+}
+
+#alerts {
+	display: none;
 }
 
 .switch {

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="style.css">
+    <script src="js.js"></script>
+    <script src="contacts.js"></script>
+    <script src="localize.js"></script>
+
+    <title>Interfaces Pessoa Máquina - iRave</title>
+  </head>
+
+
+
+  <body onload="startTime(); checkLocation();">
+
+    <div class="main_screen">
+
+      <div id="status_bar">
+        <div id="clock"></div>
+        <img class ="imgstatus" id="alerts" src="./assets/icons/pin.png">
+      </div>
+
+      <div class="container">
+          <div class="scrollbar" id="scrollbar-style" onscroll="scrollfunction('scrollbar-style', getScrollId());">
+            <button class="menuButtons" style="visibility: hidden"> <img class="menuIcons" style="float: left" id ="recintoIcon" src="./assets/icons/map.png"> <div class="nomes" style="display: none"> Recinto </div> </button>
+
+
+            <button class="menuButtons" id="helpButton" onclick='location.assign("ajuda.html");'><img class="menuIcons" id ="ajudaIcon" src="./assets/icons/users.png"> <div class="nomes"> Ajuda </div> </button>
+
+            <button class="menuButtons" id="localizationButton" onclick='location.assign("alerts.html");'><img class="menuIcons" id ="localizeIcon" src="./assets/icons/placeholder.png"> <div class="nomes"> Localização </div> </button>
+
+
+            <button class="menuButtons" style="visibility: hidden"> <img class="menuIcons"> <div class="nomes" style="display: inline-block"> Recinto </div> </button>
+          </div>
+      </div>
+
+      <div id="backButton" onclick='location.assign("index.html")'> </div>
+      <div id="lockButton" onclick='window.location.assign("lockscreen.html")'> </div>
+      <div id="scrollButtonUp" onclick='scrollUps()'> </div>
+      <div id="scrollButtonDown" onclick='scrollDowns()'> </div>
+
+    </div>
+
+    <img id="watch" src="./assets/xlarge1-114924.jpg" draggable="false">
+
+  </body>
+</html>

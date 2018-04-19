@@ -189,10 +189,10 @@ function checkLocation() {
   var alert = document.getElementById('alerts');
   
   if (location_active == "true") {
-    alert.style.visibility = "visible";
+    alert.style.display = "inline";
   }
   else {
-    alert.style.visibility = "hidden";
+    alert.style.display= "none";
   }
 }
 
@@ -202,11 +202,11 @@ function checkVisibility() {
   var alert = document.getElementById('alerts');
 
   if (check === true) {
-    alert.style.visibility = "visible";
+    alert.style.display = "inline";
     location_active = "true";
   }
   else {
-    alert.style.visibility = "hidden";
+    alert.style.display = "none";
     location_active = "false";
   }
   localStorage.setItem("location_active", JSON.stringify(location_active));
