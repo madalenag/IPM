@@ -25,13 +25,13 @@
       <div class="container">
           <div class="scrollbar" id="scrollbar-style" onscroll="scrollfunction('scrollbar-style', getScrollIdRest());">
 
-            <button class="menuButtons" style="visibility: hidden"> <img class="menuIcons" style="float: left" id ="recintoIcon" src="./assets/icons/map.png"> <div class="nomes" style="display: none"> Recinto </div> </button>
+            <button class="menuName" > <img class="menuIcons" style="float: left" id ="recintoIcon" > <div class="nomes" style="display: inline-block;"> Localização </div> </button>
 
-            <button class="menuButtonscenter" id="hamButton" onclick='location.assign("restaurantMap.html")'><img class="menuIcons" style="float: left" id ="hamIcon" src="./assets/icons/ham.png"> <div class="nomes" style="display: inline-block"> Burguer </div> </button>
+            <button class="menuButtonscenter" id="hamButton" onclick='location.assign("hamMap.html")'><img class="menuIcons" style="float: left" id ="hamIcon" src="./assets/icons/ham.png"> <div class="nomes" style="display: inline-block"> Burguer </div> </button>
 
             <button class="menuButtons" id="hotButton" onclick='location.assign("restaurantMap.html")'><img class="menuIcons" id ="hotIcon" src="./assets/icons/hotdog.png"> <div class="nomes"> HotDog </div> </button>
 
-            <button class="menuButtons" id="pizzaIcon" onclick='location.assign("restaurantMap.html")'><img class="menuIcons" id ="pizzaIcon" src="./assets/icons/pizza.png"> <div class="nomes"> Pizza </div> </button>
+            <button class="menuButtons" id="pizzaIcon" onclick='location.assign("pizzaMap.html")'><img class="menuIcons" id ="pizzaIcon" src="./assets/icons/pizza.png"> <div class="nomes"> Pizza </div> </button>
 
             <button class="menuButtons" style="visibility: hidden"> <img class="menuIcons" style="float: left" id ="recintoIcon" src="./assets/icons/map.png"> <div class="nomes" style="display: none"> Recinto </div> </button>
           </div>
@@ -41,6 +41,7 @@
       <div id="lockButton" onclick='window.location.assign("lockscreen.html")'> </div>
       <div id="scrollButtonUp" onclick='scrollUps()'> </div>
       <div id="scrollButtonDown" onclick='scrollDowns()'> </div>
+      <div id="scrollButton" onclick='location.assign("restaurantMap.html")'> </div>
 
     </div>
 

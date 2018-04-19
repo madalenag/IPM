@@ -94,10 +94,10 @@ function getScrollId(){
   if (scrollTop > 135 && scrollTop <= 170){
     id = 5;
   }
-  if (scrollTop > 170 && scrollTop <= 207){
+  if (scrollTop > 170 && scrollTop <= 205){
     id = 6;
   }
-  if (scrollTop > 207 && scrollTop <= 235){
+  if (scrollTop > 205 && scrollTop <= 235){
     id = 7;
   }
   if (scrollTop > 235 && scrollTop <= 300){
@@ -127,15 +127,33 @@ function getScrollIdRest(){
   return id;
 }
 
+function getScrollIdDef(){
+  var scrollTop = document.getElementById("scrollbar-style").scrollTop;
+  var id;
+  if (scrollTop >= 0 && scrollTop <= 15){
+    id = 0;
+  }
+  if (scrollTop > 15 && scrollTop <= 28){
+    id = 1;
+  }
+  if (scrollTop > 28 && scrollTop <= 66){
+    id = 2;
+  }
+  if (scrollTop > 66 && scrollTop <= 105){
+    id = 3;
+  }
+  return id;
+}
+
 function scrollfunction(pai, id) {
+  var btn = document.getElementById("scrollButton");
   var paiId = document.getElementById(pai);
-  console.log(paiId);
   var len = paiId.children.length;
+  btn.onclick = paiId.children[id].onclick;
   console.log(len);
-  //id = getScrollId();
   console.log(id);
   console.log(document.getElementById("scrollbar-style").scrollTop);
-  if(id == 0){
+  if(id == 0 || id == 1){
     paiId.children[1].className = "menuButtonscenter";
     paiId.children[2].className = "menuButtons";
     paiId.children[1].children[0].style.float = "left";
