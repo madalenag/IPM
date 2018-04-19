@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="style.css">
+    <script src="js.js"></script>
+    <script src="contacts.js"></script>
+
+    <title>Interfaces Pessoa Máquina - iRave</title>
+  </head>
+
+
+
+  <body onload="startTime();">
+
+    <div class="main_screen">
+
+      <div id="status_bar">
+        <div id="clock"></div>
+      </div>
+      
+
+      <div id="container">
+
+        <div id="ativarloc"> Ative a sua localização em 'Opções': </div>
+        <p>
+        <button class="menuButtonscenter" id="ativarbutton" onclick='location.assign("alerts.html")'><img class="menuIcons" src="./assets/icons/gears.png"> Opções </button>
+        </p><
+      </div>
+
+
+      <div id="backButton" onclick='goBack();'> </div>
+      <div id="lockButton" onclick='window.location.assign("lockscreen.html")'> </div>
+
+    </div>
+
+    <img id="watch" src="./assets/xlarge1-114924.jpg" draggable="false">
+
+  </body>
+</html>
