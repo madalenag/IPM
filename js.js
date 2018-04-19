@@ -112,13 +112,13 @@ function getScrollIdRest(){
   if (scrollTop >= 0 && scrollTop <= 15){
     id = 0;
   }
-  if (scrollTop > 15 && scrollTop <= 30){
+  if (scrollTop > 15 && scrollTop <= 28){
     id = 1;
   }
-  if (scrollTop > 30 && scrollTop <= 66){
+  if (scrollTop > 28 && scrollTop <= 65){
     id = 2;
   }
-  if (scrollTop > 66 && scrollTop <= 100){
+  if (scrollTop > 65 && scrollTop <= 100){
     id = 3;
   }
   if (scrollTop > 100 && scrollTop <= 135){
