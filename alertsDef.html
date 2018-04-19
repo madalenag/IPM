@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="style.css">
+    <script src="js.js"></script>
+
+    <title>Interfaces Pessoa Máquina - iRave</title>
+  
+  </head>
+
+
+
+  <body onload="startTime(); load();">
+
+    <div class="main_screen">
+      <div id="status_bar">
+        <div id="clock"></div>
+        <img class ="imgstatus" id="alerts" src="./assets/icons/pin.png">
+      </div>
+
+      <div id="container">
+        <div id="ativar">Ativar <div id="second"> Localização </div> </br> </div>
+      
+      <div class="switchforleft">
+        <label class="switch">
+            <input type="checkbox" id="checkb" onclick="save();">
+            <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
+
+    <div id="backButton" onclick='location.assign("settingsmenu.html")'> </div>
+    <div id="lockButton" onclick='location.assign("lockscreen.html")'> </div>
+
+    </div>
+
+    <img id="watch" src="./assets/xlarge1-114924.jpg" draggable="false">
+
+  </body>
+</html>
