@@ -15,6 +15,7 @@ function addFriend (name) {
   var storedData = JSON.parse(localStorage.getItem("Data"));
   if (storedData != null) {
     storedData.push(name);
+    storedData.sort();
     loadData(storedData);
   }
   else {
@@ -170,6 +171,7 @@ function removeFriend (name) {
 
   var index = storedData.indexOf(name);
   storedData.splice(index,1);
+  //storedData.sort();
 
   loadData(storedData);
 }
