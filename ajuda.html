@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="style.css">
+    <script src="js.js"></script>
+
+    <title>Interfaces Pessoa Máquina - iRave</title>
+  
+  </head>
+
+
+
+  <body onload="startTime();">
+
+    <div class="main_screen">
+      <div id="status_bar">
+        <div id="clock"></div>
+        <img class ="imgstatus" id="alerts" src="./assets/icons/click.png">
+      </div>
+
+      <div class="container">
+      <div id = "x"> Voltar <br> para trás </br> </div> <img id ="backIcons" src="./assets/icons/left-arrow.png">
+      Bloquear 
+
+      <div id= "y"> Bloquear </div>
+      <img id ="lockIcons" src="./assets/icons/left-arrow.png">
+    </div>
+
+    <div id="backButton" onclick="goBack()"> </div>
+    <div id="lockButton" onclick='location.assign("lockscreen.html")'> </div>
+
+    </div>
+
+    <img id="watch" src="./assets/xlarge1-114924.jpg" draggable="false">
+
+  </body>
+</html>
