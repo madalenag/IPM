@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="style.css">
+    <script src="js.js"></script>
+    <script src="contacts.js"></script>
+    <script src="localize.js"></script>
+
+    <title>Interfaces Pessoa Máquina - iRave</title>
+  </head>
+
+
+
+  <body onload="startTime(); checkLocation();">
+
+    <div class="main_screen">
+
+      <div id="status_bar">
+        <div id="clock"></div>
+        <img class ="imgstatus" id="alerts" src="./assets/icons/pin.png">
+      </div>
+
+      <div class="container">
+          <div class="scrollbar" id="scrollbar-style" onscroll="scrollfunction('scrollbar-style', getScrollIdRest());">
+            <button class="menuName" > <img class="menuIcons" style="float: left" id ="recintoIcon" > <div class="nomes" style="display: inline-block;"> Notificação </div> </button>
+
+            <button class="menuButtonscenter" id="recintoButton" onclick='checkOnClickLocation("fullMap.html");'><img class="menuIcons" style="float: left" id ="recintoIcon" src="./assets/icons/bell.png"> <div class="nomes" style="display: inline-block"> Alertas </div> </button>
+
+            <button class="menuButtons" id="localizePersonButton" onclick='checkOnClickLocation("daysButtons.html");'><img class="menuIcons" id ="personIcon" src="./assets/icons/schedule.png"> <div class="nomes"> Horário </div> </button>
+
+            <button class="menuButtons" id="wcButton" onclick='checkOnClickLocation("filas.html");'><img class="menuIcons" id ="wcIcon" src="./assets/icons/hourglass.png"> <div class="nomes"> Filas </div> </button>
+
+            <button class="menuButtons" style="visibility: hidden"> <img class="menuIcons"> <div class="nomes" style="display: inline-block"> Recinto </div> </button>
+          </div>
+      </div>
+
+      <div id="backButton" onclick='location.assign("index.html")'> </div>
+      <div id="lockButton" onclick='window.location.assign("lockscreen.html")'> </div>
+      <div id="scrollButtonUp" onclick='scrollUps()'> </div>
+      <div id="scrollButtonDown" onclick='scrollDowns()'> </div>
+      <div id="scrollButton" onclick='location.assign("fullMap.html")'> </div>
+
+    </div>
+
+    <img id="watch" src="./assets/xlarge1-114924.jpg" draggable="false">
+
+  </body>
+</html>

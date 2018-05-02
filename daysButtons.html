@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="style.css">
+    <script src="js.js"></script>
+    <script src="contacts.js"></script>
+    <script src="localize.js"></script>
+
+    <title>Interfaces Pessoa Máquina - iRave</title>
+  </head>
+
+
+
+  <body onload="startTime(); checkLocation();">
+
+    <div class="main_screen">
+
+      <div id="status_bar">
+        <div id="clock"></div>
+        <img class ="imgstatus" id="alerts" src="./assets/icons/pin.png">
+      </div>
+
+      <div class="container"> <div id="months"> Maio </div>
+          <button class="clickableDays" id="daysLeft">11</button>
+          <button class="clickableDays" id="daysRight">12</button>
+          <button class="unclickableDays" id="undaysLeft"></button>
+          <button class="unclickableDays" id="undaysRight"></button>
+      </div>
+
+      <div id="backButton" onclick='location.assign("notification.html")'> </div>
+      <div id="lockButton" onclick='window.location.assign("lockscreen.html")'> </div>
+
+    </div>
+
+    <img id="watch" src="./assets/xlarge1-114924.jpg" draggable="false">
+
+  </body>
+</html>

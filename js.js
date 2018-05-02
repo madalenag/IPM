@@ -94,10 +94,10 @@ function getScrollId(){
   if (scrollTop > 135 && scrollTop <= 170){
     id = 5;
   }
-  if (scrollTop > 170 && scrollTop <= 205){
+  if (scrollTop > 170 && scrollTop <= 204){
     id = 6;
   }
-  if (scrollTop > 205 && scrollTop <= 235){
+  if (scrollTop > 204 && scrollTop <= 235){
     id = 7;
   }
   if (scrollTop > 235 && scrollTop <= 300){
@@ -115,10 +115,10 @@ function getScrollIdRest(){
   if (scrollTop > 15 && scrollTop <= 28){
     id = 1;
   }
-  if (scrollTop > 28 && scrollTop <= 65){
+  if (scrollTop > 28 && scrollTop <= 62){
     id = 2;
   }
-  if (scrollTop > 65 && scrollTop <= 100){
+  if (scrollTop > 62 && scrollTop <= 100){
     id = 3;
   }
   if (scrollTop > 100 && scrollTop <= 135){

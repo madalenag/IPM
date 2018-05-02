@@ -13,6 +13,55 @@ h1 {
 	color:#000;
 }
 
+#months {
+	text-align: center;
+	color: white;
+	font-family: "Ubuntu";
+}
+
+.clickableDays {
+	position: absolute;
+	top: 0.4in;
+	width: 0.45in;
+	background-color:	#282828;
+	color: white;
+	padding: 0.10in;
+	text-align: center;
+	font-size: 0.14in;
+	margin: 3px 3px;
+	border-radius: 10px;
+	border: grey solid 2px;
+	display: inline-block;
+}
+
+.unclickableDays {
+	position: absolute;
+	top: 0.9in;
+	width: 0.45in;
+	height: 0.38in;
+	background-color:	black;
+	padding: 0.10in;
+	margin: 3px 3px;
+	border-radius: 10px;
+	border: grey dotted 2px;
+}
+
+#daysLeft {
+	left: 0.05in;
+}
+
+#daysRight {
+	left: 0.57in;
+}
+
+#undaysLeft {
+	left: 0.05in;
+}
+
+#undaysRight {
+	left: 0.57in;
+}
+
 .main_screen {
 	margin: auto;
 	background-color: black;
@@ -297,6 +346,7 @@ h1 {
 	max-width: 1.1in;
 	max-height: 1.2in;
   overflow-y: scroll;
+	min-height: 1.2in;
 }
 
 
@@ -378,17 +428,19 @@ h1 {
 .menuName {
 	font-family: "Ubuntu";
 	width: 1in;
-	background-color:	black;
-	border: none;
-	color: #bfbfbf;
+	background-color: black;
+	color: white;
 	padding-top: 0.05in;
 	padding-bottom: 0.09in;
 	text-align: left;
 	text-decoration: none;
 	display: inline-block;
 	font-size: 0.12in;
-	margin: 2px 2px;
-	border-radius: 10px;
+	margin: 1.5px 1.5px;
+	border-left: none;
+	border-top: none;
+	border-right: none;
+	border-bottom: solid 0.1px;
 }
 .menuButtons3 {
 	width: 1.05in;
