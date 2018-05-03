@@ -165,7 +165,7 @@ function showAddingButtons1() {
 
   for (i = 0; i < len; i++) {
     name = day_one[i];
-    if (!storedData.includes(name))
+    if (storedData != null && !storedData.includes(name))
       showAddingButton(name);
   }  
 }
@@ -178,8 +178,8 @@ function showAddingButtons2() {
 
   for (i = 0; i < len; i++) {
     name = day_two[i];
-    if (!storedData.includes(name))
-      showAddingButton(name);
+    if (storedData != null && !storedData.includes(name))
+        showAddingButton(name);
   }  
 }
 
