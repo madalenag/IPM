@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="style.css">
+    <script src="js.js"></script>
+    <script src="alerts.js"></script>
+
+    <title>Interfaces Pessoa Máquina - iRave</title>
+  </head>
+
+
+
+  <body onload="startTime(); checkLocation();">
+
+    <div class="main_screen">
+
+      <div id="status_bar">
+        <div id="clock"></div>
+        <img class ="imgstatus" id="alerts" src="./assets/icons/pin.png">
+      </div>
+      
+
+      <div id="container">
+        <button class="menuName" > <div class="nomes" style="display: inline-block;"> Horário: </div> </button>
+        <div id="horas1"> 18h00:  </div> <div id="evento1"> Alt-j </div>
+        <div id="horas2"> 19h30: </div> <div id="evento2"> The XX </div>
+        <div id="horas3"> 21h00: </div> <div id="evento3"> QOTSA </div>
+        <div id="horas4"> 22h30: </div> <div id="evento4"> Rhye </div>
+      </div>
+
+
+      <div id="backButton" onclick='goBack()'> </div>
+      <div id="lockButton" onclick='window.location.assign("lockscreen.html")'> </div>
+
+    </div>
+
+    <img id="watch" src="./assets/xlarge1-114924.jpg" draggable="false">
+
+  </body>
+</html>

@@ -425,6 +425,21 @@ h1 {
 	border-radius: 10px;
 }
 
+.eventbutton {
+	width: 1in;
+	background-color:	#101010	;
+	border: none;
+	color: white;
+	padding: 0.10in;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 0.14in;
+	margin: 2px 2px;
+	border-radius: 2px;
+}
+
+
 .menuName {
 	font-family: "Ubuntu";
 	width: 1in;
@@ -527,6 +542,73 @@ h1 {
 	margin-top: 0.1in;
 }
 
+
+#horas1 {
+	position: absolute;
+	font-size: 0.145in;
+	color:grey;
+	margin-left: 0.05in;
+	margin-top: 0.08in;
+}
+
+#evento1 {
+	position: absolute;
+	font-size: 0.145in;
+	color:white;
+	margin-left: 0.55in;
+	margin-top: 0.08in;
+}
+
+
+#horas2 {
+	position: absolute;
+	font-size: 0.145in;
+	color:grey;
+	margin-left: 0.05in;
+	margin-top: 0.28in;
+}
+
+#evento2 {
+	position: absolute;
+	font-size: 0.145in;
+	color:white;
+	margin-left: 0.55in;
+	margin-top: 0.28in;
+}
+
+
+#horas3 {
+	position: absolute;
+	font-size: 0.145in;
+	color:grey;
+	margin-left: 0.05in;
+	margin-top: 0.48in;
+}
+
+#evento3 {
+	position: absolute;
+	font-size: 0.145in;
+	color:white;
+	margin-left: 0.55in;
+	margin-top: 0.48in;
+}
+
+
+#horas4 {
+	position: absolute;
+	font-size: 0.145in;
+	color:grey;
+	margin-left: 0.05in;
+	margin-top: 0.68in;
+}
+
+#evento4 {
+	position: absolute;
+	font-size: 0.145in;
+	color:white;
+	margin-left: 0.55in;
+	margin-top: 0.68in;
+}
 
 
 #ativarloc {

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="style.css">
+    <script src="js.js"></script>
+    <script src="contacts.js"></script>
+    <script src="localize.js"></script>
+    <script src="alerts.js"></script>
+
+    <title>Interfaces Pessoa Máquina - iRave</title>
+  </head>
+
+
+
+  <body onload="startTime(); checkLocation();">
+
+    <div class="main_screen">
+
+      <div id="status_bar">
+        <div id="clock"></div>
+        <img class ="imgstatus" id="alerts" src="./assets/icons/pin.png">
+      </div>
+
+      <div class="container">
+          <div class="scrollbar" id="scrollbar-hidden">
+            <button class="menuName" style="padding-top: 0.00001in; padding-bottom:0.01in;">  <div class="nomes" style="display: inline-block;"> Notificações </div> </button>
+            <button class="menuButtons3" id="addPersonButton" onclick='window.location = "days.html"'>Adicionar</button>
+            <button class="menuButtons3" id="removePersonButton" onclick='window.location = "removeAlert.html"'>Remover</button>
+            <button class="menuButtons3" id="localizatePersonButton" onclick='window.location = "showAllNotifications.html"'>Agenda</button>
+          </div>
+      </div>
+
+      <div id="backButton" onclick='location.assign("notification.html")'> </div>
+      <div id="lockButton" onclick='location.assign("lockscreen.html")'> </div>
+
+    </div>
+
+    <img id="watch" src="./assets/xlarge1-114924.jpg" draggable="false">
+
+  </body>
+</html>

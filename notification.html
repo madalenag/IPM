@@ -24,13 +24,13 @@
 
       <div class="container">
           <div class="scrollbar" id="scrollbar-style" onscroll="scrollfunction('scrollbar-style', getScrollIdRest());">
-            <button class="menuName" > <img class="menuIcons" style="float: left" id ="recintoIcon" > <div class="nomes" style="display: inline-block;"> Notificação </div> </button>
+            <button class="menuName" > <img class="menuIcons" style="float: left" id ="recintoIcon" > <div class="nomes" style="display: inline-block;"> Notificações </div> </button>
 
-            <button class="menuButtonscenter" id="recintoButton" onclick='checkOnClickLocation("fullMap.html");'><img class="menuIcons" style="float: left" id ="recintoIcon" src="./assets/icons/bell.png"> <div class="nomes" style="display: inline-block"> Alertas </div> </button>
+            <button class="menuButtonscenter" id="recintoButton" onclick='location.assign("notificationsMenu.html");'><img class="menuIcons" style="float: left" id ="recintoIcon" src="./assets/icons/bell.png"> <div class="nomes" style="display: inline-block"> Alertas </div> </button>
 
-            <button class="menuButtons" id="localizePersonButton" onclick='checkOnClickLocation("daysButtons.html");'><img class="menuIcons" id ="personIcon" src="./assets/icons/schedule.png"> <div class="nomes"> Horário </div> </button>
+            <button class="menuButtons" id="localizePersonButton" onclick='window.location.assign("daysButtons.html");'><img class="menuIcons" id ="personIcon" src="./assets/icons/schedule.png"> <div class="nomes"> Horário </div> </button>
 
-            <button class="menuButtons" id="wcButton" onclick='checkOnClickLocation("filas.html");'><img class="menuIcons" id ="wcIcon" src="./assets/icons/hourglass.png"> <div class="nomes"> Filas </div> </button>
+            <button class="menuButtons" id="wcButton" onclick='window.location("filas.html");'><img class="menuIcons" id ="wcIcon" src="./assets/icons/hourglass.png"> <div class="nomes"> Filas </div> </button>
 
             <button class="menuButtons" style="visibility: hidden"> <img class="menuIcons"> <div class="nomes" style="display: inline-block"> Recinto </div> </button>
           </div>
