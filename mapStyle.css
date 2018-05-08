@@ -24,9 +24,21 @@
   background-color: #fff;
   border: 1px solid #202020;
   border-radius: 15px;
-	padding: 35px 15px;
+	padding: 45px 15px 30px 15px;
+	font-family: "Ubuntu";
 	z-index: 10;
 	opacity: 0.9;
+}
+
+#bubbleName {
+	position: absolute;
+	width: 0.9in;
+	top: 0.5in;
+	left: 0.11in;
+	text-align: center;
+	font-weight: bold;
+	visibility: hidden;
+	z-index: 12;
 }
 
 #bubble1 {

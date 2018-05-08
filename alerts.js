@@ -1,7 +1,8 @@
 var alerts = [];
 var day_one = ["Alt-j", "The XX", "QOTSA","Rhye"]; 
+var hours = ["18h00", "19h30", "21h00", "22h30"];
+var palcos = ["Palco 1", "Palco 2", "Palco 1", "Palco1"];
 var day_two = ["Foals", "Slide", "MGMT", "DIIV"];
-
 
 
 
@@ -38,7 +39,7 @@ function showAlert (name) {
 }
 
 
-function showEvent (name) {
+function showEvent (name, horas, palco) {
     var btn = document.createElement("BUTTON"); 
     var alert = document.createTextNode(name);
     btn.appendChild(alert);
@@ -49,8 +50,22 @@ function showEvent (name) {
     /*var att = document.createAttribute("id");
     att.value = "evento1";
     btn.setAttributeNode(att);*/
+    btn.setAttribute('onclick', 'getName(\'' + name + '\', \'' + horas + '\', \'' + palco + '\');');
     var scrollbar = document.getElementsByClassName("scrollbar")[0];
     scrollbar.appendChild(btn); 
+}
+
+
+function getName(name, horas, palco) {
+  document.getElementById('bubble1').style.visibility = "visible";
+  document.getElementById('cross1').style.visibility = "visible";
+  document.getElementById('bubble1').innerHTML = name + "\n" + horas + "\n" + palco;
+}
+
+
+function exitTimers(mapTextId) {
+  document.getElementById('bubble1').style.visibility = "hidden";
+  document.getElementById('cross1').style.visibility = "hidden";
 }
 
 
@@ -201,7 +216,9 @@ function showAllNotifications () {
 
     for (i = 0; i < len; i++) {
       name = storedData[i];
-      showEvent(name);
+      hora = hours[i],
+      palco = palcos[i],
+      showEvent(name, hora, palco);
     }
   }
 }

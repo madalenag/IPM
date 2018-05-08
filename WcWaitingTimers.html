@@ -27,9 +27,10 @@
         <div class="mapTexts" id="mapText1">Selecione a WC</div>
         <img id="cross1" onclick="exitTimers('mapText1')" src="./assets/icons/cross.png">
         <button class="timesBubbles" id="bubble1"></button>
-        <img class="target" id="target1" onclick="getWaitingTimes('mapText1')" onload="positionWCPin('target1')" src="./assets/icons/placeholderWC.png" width="30">
-        <img class="target" id="target2" onclick="getWaitingTimes('mapText1')" onload="positionWCPin('target2')" src="./assets/icons/placeholderWC.png" width="30">
-        <img class="target" id="target3" onclick="getWaitingTimes('mapText1')" onload="positionWCPin('target3')" src="./assets/icons/placeholderWC.png" width="30">
+        <div id="bubbleName"></div>
+        <img class="target" id="target1" onclick="getWaitingTimes('mapText1', 'target1')" onload="positionWCPin('target1')" src="./assets/icons/placeholderWC.png" width="30">
+        <img class="target" id="target2" onclick="getWaitingTimes('mapText1', 'target2')" onload="positionWCPin('target2')" src="./assets/icons/placeholderWC.png" width="30">
+        <img class="target" id="target3" onclick="getWaitingTimes('mapText1', 'target3')" onload="positionWCPin('target3')" src="./assets/icons/placeholderWC.png" width="30">
       </div>
 
       <div id="backButton" onclick="goBack()"> </div>

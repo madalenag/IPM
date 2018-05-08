@@ -27,9 +27,10 @@
         <div class="mapTexts" id="mapText2">Selecione o restaurante</div>
         <img id="cross1" onclick="exitTimers('mapText2')" src="./assets/icons/cross.png">
         <button class="timesBubbles" id="bubble1"></button>
-        <img class="target" id="target2" onclick="getWaitingTimes('mapText2')" onload="positionRestaurantstPins('target2')" src="./assets/icons/placeholderHam.png" width="30">
-        <img class="target" id="target3" onclick="getWaitingTimes('mapText2')" onload="positionRestaurantstPins('target3')" src="./assets/icons/placeholderPizza.png" width="30">
-        <img class="target" id="target1" onclick="getWaitingTimes('mapText2')" onload="positionRestaurantstPins('target1')" src="./assets/icons/placeholderHot.png" width="30">
+        <div id="bubbleName"></div>
+        <img class="target" id="target2" onclick="getWaitingTimes('mapText2', 'target2')" onload="positionRestaurantstPins('target2')" src="./assets/icons/placeholderHam.png" width="30">
+        <img class="target" id="target3" onclick="getWaitingTimes('mapText2', 'target3')" onload="positionRestaurantstPins('target3')" src="./assets/icons/placeholderPizza.png" width="30">
+        <img class="target" id="target1" onclick="getWaitingTimes('mapText2', 'target1')" onload="positionRestaurantstPins('target1')" src="./assets/icons/placeholderHot.png" width="30">
       </div>
 
       <div id="backButton" onclick="goBack()"> </div>

@@ -102,8 +102,9 @@ function positionEmergencyPin(targetId) {
   }
 }
 
-function getWaitingTimes(mapTextId) {
+function getWaitingTimes(mapTextId, targetId) {
   document.getElementById('bubble1').style.visibility = "visible";
+  document.getElementById('bubbleName').style.visibility = "visible";
   document.getElementById('target1').style.visibility = "hidden";
   document.getElementById('target2').style.visibility = "hidden";
   document.getElementById('target3').style.visibility = "hidden";
@@ -113,6 +114,32 @@ function getWaitingTimes(mapTextId) {
   if (mapTextId == "mapText2") {
     document.getElementById('mapText2').style.visibility = "hidden";
   }
+  /*para por o nome do elemento correto*/
+  if (targetId == "target1" && mapTextId == "mapText1") {
+    document.getElementById('bubbleName').innerHTML =
+  "WC 1";
+  }
+  else if (targetId == "target2" && mapTextId == "mapText1") {
+    document.getElementById('bubbleName').innerHTML =
+  "WC 2";
+  }
+  else if (targetId == "target3" && mapTextId == "mapText1") {
+    document.getElementById('bubbleName').innerHTML =
+  "WC 3";
+  }
+  else if (targetId == "target1" && mapTextId == "mapText2") {
+    document.getElementById('bubbleName').innerHTML =
+  "HotDog";
+  }
+  else if (targetId == "target2" && mapTextId == "mapText2") {
+    document.getElementById('bubbleName').innerHTML =
+  "Burger";
+  }
+  else if (targetId == "target3" && mapTextId == "mapText2") {
+    document.getElementById('bubbleName').innerHTML =
+  "Pizza";
+  }
+
   document.getElementById('cross1').style.visibility = "visible";
   var randomWaitingTimes = Math.floor((Math.random() * 10) + 1);
   if(randomWaitingTimes == 1) {
@@ -154,11 +181,12 @@ function getWaitingTimes(mapTextId) {
   else if(randomWaitingTimes == 10) {
     document.getElementById('bubble1').innerHTML =
   "7 min";
-  }
+}
 }
 
 function exitTimers(mapTextId) {
   document.getElementById('bubble1').style.visibility = "hidden";
+  document.getElementById('bubbleName').style.visibility = "hidden";
   document.getElementById('target1').style.visibility = "visible";
   document.getElementById('target2').style.visibility = "visible";
   document.getElementById('target3').style.visibility = "visible";

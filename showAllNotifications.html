@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="alerts.css">
     <script src="js.js"></script>
     <script src="contacts.js"></script>
     <script src="alerts.js"></script>
@@ -19,11 +20,13 @@
 
       <div id="status_bar">
         <div id="clock"></div>
+        <img id="cross1" onclick="exitTimers('mapText1')" src="./assets/icons/cross.png">
         <img class ="imgstatus" id="alerts" src="./assets/icons/pin.png">
         <img class ="imgstatus" id="alerts1" style="left: 0.5cm;" src="./assets/icons/alarmbell.png">
       </div>
 
       <div id="container">
+          <button class="timesBubbles" id="bubble1"></button>
           <div class="scrollbar" id="scrollbar-style">
           <button class="menuName" > <div class="nomes" style="display: inline-block;"> Alertas: </div> </button>
           </div>
