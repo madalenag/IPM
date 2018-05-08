@@ -203,9 +203,9 @@ var location_active = "false";
 
 
 function checkLocation() {
+  var storedData = JSON.parse(localStorage.getItem("AlertsData"));
   var location_active = JSON.parse(localStorage.getItem('location_active'));
   var alert = document.getElementById('alerts');
-  var alert_active = JSON.parse(localStorage.getItem('alert_active'));
   var alert1 = document.getElementById('alerts1');
   
   if (location_active == "true") {
@@ -215,11 +215,11 @@ function checkLocation() {
     alert.style.display= "none";
   }
 
-  if (alert_active == "true") {
+  if (storedData.length != 0) {
     alert1.style.display = "inline";
   }
 
-  else if(alert_active = "false") {
+  else if(storedData.length == 0) {
     alert1.style.display= "none";
   }
 }

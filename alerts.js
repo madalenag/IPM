@@ -244,14 +244,16 @@ function displayAlert(){
   if(storedData.length != 0){
     var name = storedData[0];
     var alert_active = JSON.parse(localStorage.getItem('alert_active'));
-    var alert1 = document.getElementById('alerts1');
     if (alert_active == "true") {
+      var alert = document.getElementsByClassName('alertUnlocked')[0];
+      console.log(alert);
+      alert.parentNode.removeChild(alert);
       removeAlert(name);
-      alert1.style.display= "none";
       alert_active = "false";
+      checkLocation();
     }
     else {
-      alert1.style.display = "inline";
+      showOnUnlock(name);
       alert_active = "true";
     }
     localStorage.setItem("alert_active", JSON.stringify(alert_active));
@@ -266,7 +268,8 @@ function displayAlertOnLock(){
     var alert_active = JSON.parse(localStorage.getItem('alert_active'));
     if (alert_active == "true") {
       var alert = document.getElementsByClassName('alertLock')[0];
-      alert.style.display = "hidden";
+      console.log(alert);
+      alert.parentNode.removeChild(alert);
       removeAlert(name);
       alert_active = "false";
     }
@@ -300,6 +303,21 @@ function showOnLock (name) {
 
     var att = document.createAttribute("class");
     att.value = "alertLock";
+    btn.setAttributeNode(att);
+    /*var att = document.createAttribute("id");
+    att.value = "evento1";
+    btn.setAttributeNode(att);*/
+    var scrollbar = document.getElementsByClassName("main_screen")[0];
+    scrollbar.appendChild(btn); 
+}
+
+function showOnUnlock (name) {
+    var btn = document.createElement("BUTTON"); 
+    var alert = document.createTextNode(name);
+    btn.appendChild(alert);
+
+    var att = document.createAttribute("class");
+    att.value = "alertUnlocked";
     btn.setAttributeNode(att);
     /*var att = document.createAttribute("id");
     att.value = "evento1";

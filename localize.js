@@ -141,47 +141,9 @@ function getWaitingTimes(mapTextId, targetId) {
   }
 
   document.getElementById('cross1').style.visibility = "visible";
-  var randomWaitingTimes = Math.floor((Math.random() * 10) + 1);
-  if(randomWaitingTimes == 1) {
-    document.getElementById('bubble1').innerHTML =
-  "5 min";
-  }
-  else if(randomWaitingTimes == 2) {
-    document.getElementById('bubble1').innerHTML =
-  "3 min";
-  }
-  else if(randomWaitingTimes == 3) {
-    document.getElementById('bubble1').innerHTML =
-  "1 min";
-  }
-  else if(randomWaitingTimes == 4) {
-    document.getElementById('bubble1').innerHTML =
-  "10 min";
-  }
-  else if(randomWaitingTimes == 5) {
-    document.getElementById('bubble1').innerHTML =
-  "15 min";
-  }
-  else if(randomWaitingTimes == 6) {
-    document.getElementById('bubble1').innerHTML =
-  "1 min";
-  }
-  else if(randomWaitingTimes == 7) {
-    document.getElementById('bubble1').innerHTML =
-  "8 min";
-  }
-  else if(randomWaitingTimes == 8) {
-    document.getElementById('bubble1').innerHTML =
-  "30 min";
-  }
-  else if(randomWaitingTimes == 9) {
-    document.getElementById('bubble1').innerHTML =
-  "20 min";
-  }
-  else if(randomWaitingTimes == 10) {
-    document.getElementById('bubble1').innerHTML =
-  "7 min";
-}
+  var randomWaitingTimes = Math.floor((Math.random() * 30));
+  document.getElementById('bubble1').innerHTML =
+    randomWaitingTimes + " min";
 }
 
 function exitTimers(mapTextId) {
