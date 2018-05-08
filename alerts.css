@@ -16,8 +16,8 @@
 .timesBubbles {
 	position: absolute;
 	width: 0.9in;
-	top: 0.2in;
-	left: 0.11in;
+	top: 0.25in;
+	left: 0.07in;
   	text-align: center;
 	font-size: 14px;
 	font-family: "Ubuntu";
@@ -37,8 +37,8 @@
 #cross1 {
 	position: absolute;
 	width: 0.2in;
-	left: 0.78in;
-	top: 0.27in;
+	left: 0.74in;
+	top: 0.29in;
 	visibility: hidden;
 	z-index: 13;
 }
