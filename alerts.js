@@ -5,6 +5,8 @@ var day_two = ["Foals", "Slide", "MGMT", "DIIV"];
 
 
 
+
+
 function loadData (data) {
   localStorage.setItem("AlertsData", JSON.stringify(data));
 }
@@ -216,4 +218,75 @@ function removeAlert (name) {
   //storedData.sort();
 
   loadData(storedData);
+}
+
+var alert_active = "false";
+
+function displayAlert(){
+  var storedData = JSON.parse(localStorage.getItem("AlertsData"));
+  if(storedData.length != 0){
+    var name = storedData[0];
+    var alert_active = JSON.parse(localStorage.getItem('alert_active'));
+    var alert1 = document.getElementById('alerts1');
+    if (alert_active == "true") {
+      removeAlert(name);
+      alert1.style.display= "none";
+      alert_active = "false";
+    }
+    else {
+      alert1.style.display = "inline";
+      alert_active = "true";
+    }
+    localStorage.setItem("alert_active", JSON.stringify(alert_active));
+  }
+
+}
+
+function displayAlertOnLock(){
+  var storedData = JSON.parse(localStorage.getItem("AlertsData"));
+  if(storedData.length != 0){
+    var name = storedData[0];
+    var alert_active = JSON.parse(localStorage.getItem('alert_active'));
+    if (alert_active == "true") {
+      var alert = document.getElementsByClassName('alertLock')[0];
+      alert.style.display = "hidden";
+      removeAlert(name);
+      alert_active = "false";
+    }
+    else {
+      showOnLock(name);
+      alert_active = "true";
+    }
+    localStorage.setItem("alert_active", JSON.stringify(alert_active));
+  }
+
+}
+
+function alertOnLock() {
+  var storedData = JSON.parse(localStorage.getItem("AlertsData"));
+  var name = storedData[0];
+  var alert_active = JSON.parse(localStorage.getItem('alert_active'));
+  if (alert_active == "true") {
+    showOnLock(name);
+  }
+
+  localStorage.setItem("alert_active", JSON.stringify(alert_active));
+
+    /*var storedData = JSON.parse(localStorage.getItem("AlertsData"));
+  var name = storedData[0];
+  showOnLock(name);*/
+}
+function showOnLock (name) {
+    var btn = document.createElement("BUTTON"); 
+    var alert = document.createTextNode(name);
+    btn.appendChild(alert);
+
+    var att = document.createAttribute("class");
+    att.value = "alertLock";
+    btn.setAttributeNode(att);
+    /*var att = document.createAttribute("id");
+    att.value = "evento1";
+    btn.setAttributeNode(att);*/
+    var scrollbar = document.getElementsByClassName("main_screen")[0];
+    scrollbar.appendChild(btn); 
 }

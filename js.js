@@ -133,10 +133,10 @@ function getScrollIdDef(){
   if (scrollTop >= 0 && scrollTop <= 15){
     id = 0;
   }
-  if (scrollTop > 15 && scrollTop <= 28){
+  if (scrollTop > 15 && scrollTop <= 27){
     id = 1;
   }
-  if (scrollTop > 28 && scrollTop <= 66){
+  if (scrollTop > 27 && scrollTop <= 66){
     id = 2;
   }
   if (scrollTop > 66 && scrollTop <= 105){
@@ -205,12 +205,22 @@ var location_active = "false";
 function checkLocation() {
   var location_active = JSON.parse(localStorage.getItem('location_active'));
   var alert = document.getElementById('alerts');
+  var alert_active = JSON.parse(localStorage.getItem('alert_active'));
+  var alert1 = document.getElementById('alerts1');
   
   if (location_active == "true") {
     alert.style.display = "inline";
   }
-  else {
+  else if(location_active = "false") {
     alert.style.display= "none";
+  }
+
+  if (alert_active == "true") {
+    alert1.style.display = "inline";
+  }
+
+  else if(alert_active = "false") {
+    alert1.style.display= "none";
   }
 }
 

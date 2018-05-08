@@ -6,19 +6,21 @@
     <link rel="stylesheet" href="style.css">
     <script src="js.js"></script>
     <script src="contacts.js"></script>
+     <script src="alerts.js"></script>
 
     <title>Interfaces Pessoa Máquina - iRave</title>
   </head>
 
 
 
-  <body onload="startTime(); showAddingButtons(); checkLocation();">
+  <body onload="startTime(); showAddingButtons(); checkLocation();" onkeypress="displayAlert();">
 
     <div class="main_screen">
 
       <div id="status_bar">
         <div id="clock"></div>
         <img class ="imgstatus" id="alerts" src="./assets/icons/pin.png">
+        <img class ="imgstatus" id="alerts1" style="left: 0.5cm;" src="./assets/icons/alarmbell.png">
       </div>
       
 

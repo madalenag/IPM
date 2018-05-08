@@ -1,0 +1,43 @@
+.mapTexts {
+	position: absolute;
+	top: 1.25in;
+	left: 0.17in;
+	color: black;
+	font-family: "Ubuntu";
+	font-size: 10px;
+	font-weight: bold;
+}
+
+#mapText2 {
+	top: 1.15in;
+	left: 0.28in;
+}
+
+.timesBubbles {
+	position: absolute;
+	width: 0.9in;
+	top: 0.23in;
+	left: 0.11in;
+  text-align: center;
+	font-size: 14px;
+  line-height: 15px;
+  background-color: #fff;
+  border: 1px solid #202020;
+  border-radius: 15px;
+	padding: 35px 15px;
+	z-index: 10;
+	opacity: 0.9;
+}
+
+#bubble1 {
+	visibility: hidden;
+}
+
+#cross1 {
+	position: absolute;
+	width: 0.2in;
+	left: 0.78in;
+	top: 0.27in;
+	visibility: hidden;
+	z-index: 13;
+}

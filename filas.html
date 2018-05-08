@@ -7,30 +7,30 @@
     <script src="js.js"></script>
     <script src="contacts.js"></script>
     <script src="localize.js"></script>
+    <script src="alerts.js"></script>
 
     <title>Interfaces Pessoa Máquina - iRave</title>
   </head>
 
 
 
-  <body onload="startTime(); checkLocation();">
+  <body onload="startTime(); checkLocation();" onkeypress="displayAlert();">
 
     <div class="main_screen">
 
       <div id="status_bar">
         <div id="clock"></div>
         <img class ="imgstatus" id="alerts" src="./assets/icons/pin.png">
+        <img class ="imgstatus" id="alerts1" style="left: 0.5cm;" src="./assets/icons/alarmbell.png">
       </div>
 
       <div class="container">
-          <div class="scrollbar" id="scrollbar-style" onscroll="scrollfunction('scrollbar-style', getScrollIdRest());">
+          <div class="scrollbar" id="scrollbar-style" onscroll="scrollfunction('scrollbar-style', getScrollIdDef());">
             <button class="menuName" > <img class="menuIcons" style="float: left" id ="recintoIcon" > <div class="nomes" style="display: inline-block;"> Filas </div> </button>
 
-            <button class="menuButtonscenter" id="recintoButton" onclick='checkOnClickLocation("fullMap.html");'><img class="menuIcons" style="float: left" id ="recintoIcon" src="./assets/icons/bathroom.png"> <div class="nomes" style="display: inline-block"> WC </div> </button>
+            <button class="menuButtonscenter" id="recintoButton" onclick='window.location.assign("WcWaitingTimers.html");'><img class="menuIcons" style="float: left" id ="recintoIcon" src="./assets/icons/bathroom.png"> <div class="nomes" style="display: inline-block"> WC </div> </button>
 
-            <button class="menuButtons" id="localizePersonButton" onclick='checkOnClickLocation("localizePeople.html");'><img class="menuIcons" id ="personIcon" src="./assets/icons/cutlery.png"> <div class="nomes"> Refeição </div> </button>
-
-            <button class="menuButtons" id="wcButton" onclick='checkOnClickLocation("WCMap.html");'><img class="menuIcons" id ="wcIcon" src="./assets/icons/waiting.png"> <div class="nomes"> Eventos </div> </button>
+            <button class="menuButtons" id="localizePersonButton" onclick='window.location.assign("RestaurantsWaitingTimers.html");'><img class="menuIcons" id ="personIcon" src="./assets/icons/cutlery.png"> <div class="nomes"> Refeição </div> </button>
 
             <button class="menuButtons" style="visibility: hidden"> <img class="menuIcons"> <div class="nomes" style="display: inline-block"> Recinto </div> </button>
           </div>

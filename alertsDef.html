@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="style.css">
     <script src="js.js"></script>
+    <script src="alerts.js"></script>
 
     <title>Interfaces Pessoa Máquina - iRave</title>
   
@@ -12,12 +13,13 @@
 
 
 
-  <body onload="startTime(); load();">
+  <body onload="startTime(); load();" onkeypress="displayAlert();">
 
     <div class="main_screen">
       <div id="status_bar">
         <div id="clock"></div>
         <img class ="imgstatus" id="alerts" src="./assets/icons/pin.png">
+        <img class ="imgstatus" id="alerts1" style="left: 0.5cm;" src="./assets/icons/alarmbell.png">
       </div>
 
       <div id="container">

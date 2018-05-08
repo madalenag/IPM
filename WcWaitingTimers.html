@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mapStyle.css">
+    <script src="js.js"></script>
+    <script src="localize.js"></script>
+
+    <title>Interfaces Pessoa Máquina - iRave</title>
+  </head>
+
+
+
+  <body onload="startTime();">
+
+    <div class="main_screen">
+
+      <div id="status_bar_Map">
+      	<div id="clock"></div>
+      </div>
+
+      <div class="container">
+        <img id="map" src="./assets/mapaPNG.png">
+        <img id="pin" onload="positionSelfPin()" src="./assets/icons/blue-dot.png" width="18">
+        <div class="mapTexts" id="mapText1">Selecione a WC</div>
+        <img id="cross1" onclick="exitTimers('mapText1')" src="./assets/icons/cross.png">
+        <button class="timesBubbles" id="bubble1"></button>
+        <img class="target" id="target1" onclick="getWaitingTimes('mapText1')" onload="positionWCPin('target1')" src="./assets/icons/placeholderWC.png" width="30">
+        <img class="target" id="target2" onclick="getWaitingTimes('mapText1')" onload="positionWCPin('target2')" src="./assets/icons/placeholderWC.png" width="30">
+        <img class="target" id="target3" onclick="getWaitingTimes('mapText1')" onload="positionWCPin('target3')" src="./assets/icons/placeholderWC.png" width="30">
+      </div>
+
+      <div id="backButton" onclick="goBack()"> </div>
+      <div id="lockButton" onclick='location.assign("lockscreen.html")'> </div>
+
+    </div>
+
+    <img id="watch" src="./assets/xlarge1-114924.jpg">
+
+  </body>
+</html>

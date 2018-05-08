@@ -439,6 +439,22 @@ h1 {
 	border-radius: 2px;
 }
 
+.alertLock{
+	position: absolute;
+	top: 0.1cm;
+	left: 0.1cm;
+	width: 1in;
+	background-color:	grey	;
+	border: none;
+	color: white;
+	padding: 0.05in;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 0.14in;
+	margin: 2px 2px;
+	border-radius: 8px;
+}
 
 .menuName {
 	font-family: "Ubuntu";
