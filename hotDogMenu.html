@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="style.css">
+    <script src="js.js"></script>
+    <script src="contacts.js"></script>
+    <script src="localize.js"></script>
+    <script src="alerts.js"></script>
+
+    <title>Interfaces Pessoa Máquina - iRave</title>
+  </head>
+
+
+
+  <body onload="startTime(); checkLocation();"  onkeypress="displayAlert();">
+
+    <div class="main_screen">
+
+      <div id="status_bar">
+        <div id="clock"></div>
+        <img class ="imgstatus" id="alerts" src="./assets/icons/pin.png">
+        <img class ="imgstatus" id="alerts1" style="left: 0.5cm;" src="./assets/icons/alarmbell.png">
+      </div>
+
+      <div class="container">
+          <div class="scrollbar" id="scrollbar-style" onscroll="scrollfunction('scrollbar-style', getScrollIdRest());">
+            <button class="menuName" > <img class="menuIcons" style="float: left" id ="recintoIcon" > <div class="nomes" style="display: inline-block;"> HotDog </div> </button>
+
+            <button class="menuButtonscenter" id="recintoButton" onclick='location.assign("amountSelection.html");'><img class="menuIcons" style="float: left" id ="recintoIcon" src="./assets/icons/sausage (1).png"> <div class="nomes" style="display: inline-block"> XLDog </div> </button>
+
+            <button class="menuButtons" id="localizePersonButton" onclick='window.location.assign("amountSelection.html");'><img class="menuIcons" id ="personIcon" src="./assets/icons/sausage.png"> <div class="nomes"> CornDog </div> </button>
+
+            <button class="menuButtons" id="localizePersonButton" onclick='window.location.assign("amountSelection.html");'><img class="menuIcons" id ="personIcon" src="./assets/icons/french-fries.png"> <div class="nomes"> Batatas </div> </button>
+
+            <button class="menuButtons" style="visibility: hidden"> <img class="menuIcons"> <div class="nomes" style="display: inline-block"> Recinto </div> </button>
+          </div>
+      </div>
+
+      <div id="backButton" onclick='location.assign("orders.html")'> </div>
+      <div id="lockButton" onclick='window.location.assign("lockscreen.html")'> </div>
+      <div id="scrollButtonUp" onclick='scrollUps()'> </div>
+      <div id="scrollButtonDown" onclick='scrollDowns()'> </div>
+      <div id="scrollButton" onclick='location.assign("amountSelection.html")'> </div>
+
+    </div>
+
+    <img id="watch" src="./assets/xlarge1-114924.jpg" draggable="false">
+
+  </body>
+</html>

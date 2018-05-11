@@ -15,6 +15,7 @@
   <body onload="startTime(); checkLocation();" onkeypress="displayAlert();">
 
     <div class="main_screen">
+    <img id="cross2" style="display: none" onclick= "displayAlert();" src="./assets/icons/cross.png">
       
       <div id="status_bar">
       	<div id="clock"></div>
@@ -25,7 +26,7 @@
 
       <div class="container">
       		<img class="imgclass" id="notifications" onclick='window.location = "notification.html"' src="./assets/icons/notification.png">
-      		<img class="imgclass" id="orders" src="./assets/icons/shopping-cart.png">
+      		<img class="imgclass" id="orders" onclick='window.location = "orders.html"' src="./assets/icons/shopping-cart.png">
       		<img class="imgclass" id="localization" onclick='window.location = "localization.html"' src="./assets/icons/placeholder.png">
       		<img class="imgclass" id="settings" onclick='window.location = "settingsmenu.html"'src="./assets/icons/gears.png">
       </div>

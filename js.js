@@ -85,10 +85,10 @@ function getScrollId(){
   if (scrollTop > 30 && scrollTop <= 66){
     id = 2;
   }
-  if (scrollTop > 66 && scrollTop <= 100){
+  if (scrollTop > 66 && scrollTop <= 97){
     id = 3;
   }
-  if (scrollTop > 100 && scrollTop <= 135){
+  if (scrollTop > 97 && scrollTop <= 135){
     id = 4;
   }
   if (scrollTop > 135 && scrollTop <= 170){
