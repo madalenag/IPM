@@ -4,17 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ordersStyle.css">
     <script src="js.js"></script>
     <script src="contacts.js"></script>
     <script src="localize.js"></script>
     <script src="alerts.js"></script>
+    <script src="ordersJS.js"></script>
 
     <title>Interfaces Pessoa Máquina - iRave</title>
   </head>
 
 
 
-  <body onload="startTime(); checkLocation();"  onkeypress="displayAlert();">
+  <body onload="startTime(); checkLocation(); allowPurchase();"  onkeypress="displayAlert();">
+
 
     <div class="main_screen">
 
@@ -34,7 +37,8 @@
 
             <button class="menuButtons" id="localizePersonButton" onclick='window.location.assign("amountSelection.html");'><img class="menuIcons" id ="personIcon" src="./assets/icons/french-fries.png"> <div class="nomes"> Batatas </div> </button>
 
-            <button class="menuButtons" style="visibility: hidden"> <img class="menuIcons"> <div class="nomes" style="display: inline-block"> Recinto </div> </button>
+            <button class="menuButtons" id="invisibleButton" style="display: none"> <img class="menuIcons"> <div class="nomes" style="display: inline-block"> Recinto </div> </button>
+            <img id="finalizeButton" src="./assets/icons/shopping-cart-grey2.png">
           </div>
       </div>
 
