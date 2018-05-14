@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ordersStyle.css">
     <script src="js.js"></script>
     <script src="contacts.js"></script>
     <script src="localize.js"></script>
     <script src="alerts.js"></script>
+    <script src="orders.js"></script>
 
     <title>Interfaces Pessoa Máquina - iRave</title>
   </head>
 
 
 
-  <body onload="startTime(); checkLocation();"  onkeypress="displayAlert();">
+  <body onload="startTime(); checkLocation(); hideAmountSelection();"  onkeypress="displayAlert();">
 
     <div class="main_screen">
 
@@ -28,21 +30,33 @@
           <div class="scrollbar" id="scrollbar-style" onscroll="scrollfunction('scrollbar-style', getScrollIdRest());">
             <button class="menuName" > <img class="menuIcons" style="float: left" id ="recintoIcon" > <div class="nomes" style="display: inline-block;"> Burger </div> </button>
 
-            <button class="menuButtonscenter" id="recintoButton" onclick='location.assign("amountSelection.html");'><img class="menuIcons" style="float: left" id ="recintoIcon" src="./assets/icons/hamburger.png"> <div class="nomes" style="display: inline-block"> Xburger </div> </button>
+            <button class="menuButtonscenter" id="recintoButton" onclick='showAmountSelecction(3);'><img class="menuIcons" style="float: left" id ="recintoIcon" src="./assets/icons/hamburger.png"> <div class="nomes" style="display: inline-block"> Xburger </div> </button>
 
-            <button class="menuButtons" id="localizePersonButton" onclick='window.location.assign("amountSelection.html");'><img class="menuIcons" id ="personIcon" src="./assets/icons/french-fries.png"> <div class="nomes"> Batatas </div> </button>
+            <button class="menuButtons" id="localizePersonButton" onclick='showAmountSelecction(4);'><img class="menuIcons" id ="personIcon" src="./assets/icons/french-fries.png"> <div class="nomes"> Batatas </div> </button>
 
-            <button class="menuButtons" id="localizePersonButton" onclick='window.location.assign("amountSelection.html");'><img class="menuIcons" id ="personIcon" src="./assets/icons/drink.png"> <div class="nomes"> Bebida </div> </button>
+            <button class="menuButtons" id="localizePersonButton" onclick='showAmountSelecction(5);'><img class="menuIcons" id ="personIcon" src="./assets/icons/drink.png"> <div class="nomes"> Bebida </div> </button>
 
             <button class="menuButtons" style="visibility: hidden"> <img class="menuIcons"> <div class="nomes" style="display: inline-block"> Recinto </div> </button>
           </div>
+
       </div>
 
-      <div id="backButton" onclick='location.assign("orders.html")'> </div>
+
+      <div class="containerSelection">
+          <div id="preco"> Preço: 5€ </div>
+          <div id="square"> 1 </div>
+          <img class="imgas" id="add1" onclick='incrementa()' src="./assets/icons/add.png">
+          <img class="imgas" id="less1" onclick='decrementa()' src="./assets/icons/less.png">
+          <img class="imgas" id="dontless1" src="./assets/icons/less.png">
+          <button class="optionsPurchase" id="confirmButton" onclick='hideAmountSelection(); addItemToPurchase();'>Ok</button>
+          <button class="optionsPurchase" id="denyButton" onclick='hideAmountSelection();'>Cancel</button>
+      </div>
+
+      <div id="backButton" onclick='window.location.assign("orders.html")'> </div>
       <div id="lockButton" onclick='window.location.assign("lockscreen.html")'> </div>
       <div id="scrollButtonUp" onclick='scrollUps()'> </div>
       <div id="scrollButtonDown" onclick='scrollDowns()'> </div>
-      <div id="scrollButton" onclick='location.assign("amountSelection.html")'> </div>
+      <div id="scrollButton" onclick='showAmountSelecction(getScrollId()+3);'> </div>
 
     </div>
 

@@ -237,7 +237,7 @@ function removeAlert (name) {
   loadData(storedData);
 }
 
-var alert_active = "false";
+/*var alert_active = "false";
 
 function displayAlert(){
   var storedData = JSON.parse(localStorage.getItem("AlertsData"));
@@ -294,10 +294,6 @@ function alertOnLock() {
   }
 
   localStorage.setItem("alert_active", JSON.stringify(alert_active));
-
-    /*var storedData = JSON.parse(localStorage.getItem("AlertsData"));
-  var name = storedData[0];
-  showOnLock(name);*/
 }
 function showOnLock (name) {
     var btn = document.createElement("BUTTON"); 
@@ -307,9 +303,6 @@ function showOnLock (name) {
     var att = document.createAttribute("class");
     att.value = "alertLock";
     btn.setAttributeNode(att);
-    /*var att = document.createAttribute("id");
-    att.value = "evento1";
-    btn.setAttributeNode(att);*/
     var scrollbar = document.getElementsByClassName("main_screen")[0];
     scrollbar.appendChild(btn); 
 }
@@ -322,11 +315,6 @@ function byePopup() {
 }
 
 function showOnUnlock (name) {
-    /*var img = document.createElement("IMG");
-    img.setAttribute("src", "./assets/icons/cross.png");
-    var id = document.createAttribute("id");
-    id.value = "cross2";
-    img.setAttributeNode(id);*/
     var cross = document.getElementById("cross2");
     cross.style.display = "inline";
 
@@ -337,11 +325,8 @@ function showOnUnlock (name) {
     var att = document.createAttribute("class");
     att.value = "alertUnlocked";
     btn.setAttributeNode(att);
-    /*var att = document.createAttribute("id");
-    att.value = "evento1";
-    btn.setAttributeNode(att);*/
     var scrollbar = document.getElementsByClassName("main_screen")[0];
     scrollbar.appendChild(btn);
     //scrollbar.appendChild(img);
     //img.onclick = byePopup();
-}
+}*/

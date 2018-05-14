@@ -1,3 +1,4 @@
+/*button that changes when item is added to cart, *shopMenus.html*/
 #finalizeButton {
   width: 0.27in;
   height: 0.27in;
@@ -13,9 +14,43 @@
   border-radius: 5px;
 
 }
+/*-----------------------*/
 
-/*
-position: fixed;
-top: 3.6in;
-left: 6.44in;
-*/
+/*acceptPurchase.html*/
+#checkMark2 {
+  top: 0.85in;
+  left: 0.33in;
+  width: 0.5in;
+}
+
+.acceptPurchaseText {
+  margin-top: 0.1in;
+}
+/*-----------------------*/
+
+/*amountSelection.html buttons*/
+.optionsPurchase{
+	width: 0.5in;
+	background-color:	#282828;
+	border: none;
+	color: white;
+	padding: 0.04in 0in;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 0.13in;
+	margin-left: 0.05in;
+	border-radius: 5px;
+	position: relative;
+	margin-top:0.70in;
+}
+
+#confirmButton {
+  background-color:	#318c10;
+}
+
+#denyButton {
+  margin-left: 0in;
+  background-color:	#bc2a1a;
+}
+/*-------------------------*/

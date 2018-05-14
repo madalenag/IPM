@@ -199,7 +199,127 @@ function scrollDowns(){
   document.getElementById("scrollbar-style").scrollTop = scrollDown + 35; 
 }
 
+function removeAlert1 (name) {
+  var storedData = JSON.parse(localStorage.getItem("AlertsData"));
+  var i, len;
+  len = storedData.length;
+
+  var index = storedData.indexOf(name);
+  storedData.splice(index,1);
+  //storedData.sort();
+
+  localStorage.setItem("AlertsData", JSON.stringify(storedData));
+}
+
 var location_active = "false";
+var alert_active = "false";
+
+function displayAlert(){
+  var verify = document.getElementById('alerts');
+  //console.log(alert);
+  var storedData = JSON.parse(localStorage.getItem("AlertsData"));
+  if(storedData.length != 0){
+    var name = storedData[0];
+    var alert_active = JSON.parse(localStorage.getItem('alert_active'));
+    if (alert_active == "true") {
+      var alert = document.getElementsByClassName('alertUnlocked')[0];
+      byePopup();
+      alert.parentNode.removeChild(alert);
+      removeAlert1(name);
+      alert_active = "false";
+      if(verify != null)
+        checkLocation();
+    }
+    else {
+      showOnUnlock(name);
+      alert_active = "true";
+    }
+    localStorage.setItem("alert_active", JSON.stringify(alert_active));
+  }
+
+}
+
+function displayAlertOnLock(){
+  var storedData = JSON.parse(localStorage.getItem("AlertsData"));
+  if(storedData.length != 0){
+    var name = storedData[0];
+    var alert_active = JSON.parse(localStorage.getItem('alert_active'));
+    if (alert_active == "true") {
+      var alert = document.getElementsByClassName('alertLock')[0];
+      console.log(alert);
+      alert.parentNode.removeChild(alert);
+      removeAlert1(name);
+      alert_active = "false";
+    }
+    else {
+      showOnLock(name);
+      alert_active = "true";
+    }
+    localStorage.setItem("alert_active", JSON.stringify(alert_active));
+  }
+
+}
+
+function alertOnLock() {
+  var storedData = JSON.parse(localStorage.getItem("AlertsData"));
+  var name = storedData[0];
+  var alert_active = JSON.parse(localStorage.getItem('alert_active'));
+  if (alert_active == "true") {
+    showOnLock(name);
+  }
+
+  localStorage.setItem("alert_active", JSON.stringify(alert_active));
+
+    /*var storedData = JSON.parse(localStorage.getItem("AlertsData"));
+  var name = storedData[0];
+  showOnLock(name);*/
+}
+function showOnLock (name) {
+    var btn = document.createElement("BUTTON"); 
+    var alert = document.createTextNode(name);
+    btn.appendChild(alert);
+
+    var att = document.createAttribute("class");
+    att.value = "alertLock";
+    btn.setAttributeNode(att);
+    /*var att = document.createAttribute("id");
+    att.value = "evento1";
+    btn.setAttributeNode(att);*/
+    var scrollbar = document.getElementsByClassName("main_screen")[0];
+    scrollbar.appendChild(btn); 
+}
+
+function byePopup() {
+  var alert = document.getElementsByClassName('alertUnlocked')[0];
+  var cross = document.getElementById("cross2");
+  cross.style.display = "none";
+
+}
+
+function showOnUnlock (name) {
+    /*var img = document.createElement("IMG");
+    img.setAttribute("src", "./assets/icons/cross.png");
+    var id = document.createAttribute("id");
+    id.value = "cross2";
+    img.setAttributeNode(id);*/
+    var cross = document.getElementById("cross2");
+    cross.style.display = "inline";
+
+    var btn = document.createElement("BUTTON"); 
+    var alert = document.createTextNode("Em 5 mins:\n" + name);
+    btn.appendChild(alert);
+
+    var att = document.createAttribute("class");
+    att.value = "alertUnlocked";
+    btn.setAttributeNode(att);
+    /*var att = document.createAttribute("id");
+    att.value = "evento1";
+    btn.setAttributeNode(att);*/
+    var scrollbar = document.getElementsByClassName("main_screen")[0];
+    scrollbar.appendChild(btn);
+    //scrollbar.appendChild(img);
+    //img.onclick = byePopup();
+}
 
 
 function checkLocation() {
