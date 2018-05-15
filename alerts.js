@@ -62,6 +62,12 @@ function getName(name, horas, palco) {
   document.getElementById('bubble1').innerHTML = name + "\n" + horas + "\n" + palco;
 }
 
+function getFood(name, horas, palco) {
+  document.getElementById('bubble1').style.visibility = "visible";
+  document.getElementById('cross1').style.visibility = "visible";
+  document.getElementById('bubble1').innerHTML = name + "\nQuant:" + horas + "\nPreço:" + palco + "€";
+}
+
 
 function exitTimers(mapTextId) {
   document.getElementById('bubble1').style.visibility = "hidden";

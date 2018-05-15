@@ -19,7 +19,7 @@ var imgs = ["./assets/icons/sausage (1).png", "./assets/icons/sausage.png", "./a
  "./assets/icons/shirt1.png", "./assets/icons/mug.png", "./assets/icons/cap.png" ];
 var carrinho = [];
 var carr_quant= [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-var carr_precos= [3, 4, 2, 3, 2, 1.5, 2, 4, 1, 6, 3, 4];
+var carr_precos= [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 var prices = [3, 4, 2, 3, 2, 1.5, 2, 4, 1, 6, 3, 4];
 var preco = 0;
 
@@ -32,8 +32,15 @@ function hideAmountSelection () {
 
   var cont = document.getElementsByClassName("containerSelection");
 
-  for (var j = 0; j < cont.length; j++)
-    cont[j].style.display = "none";
+  document.getElementById("preco").style.visibility = "hidden";
+  document.getElementById("square").style.display = "none";
+  document.getElementById("add1").style.display = "none";
+  document.getElementById("dontless1").style.display = "none";
+
+  var options = document.getElementsByClassName("optionsPurchase");
+  for (var j = 0; j < options.length; j++)
+    options[j].style.display = "none";
+
 }
 
 
@@ -44,6 +51,7 @@ function showAmountSelecction (order) {
     buttons[j].style.display = "none";
 
   document.getElementById("preco").style.visibility = "visible";
+  console.log(document.getElementById("preco"));
   document.getElementById('preco').innerHTML = "Preço: " + prices[order] + "€";
   document.getElementById("square").style.display = "inline";
   document.getElementById("add1").style.display = "inline-block";
@@ -76,10 +84,11 @@ function incrementa(order) {
   }
   document.getElementById('square').innerHTML = "" + i + "";
 
-  preco += prices[order];
+  var preco = prices[order] * i;
+
   document.getElementById('preco').innerHTML = "Preço: " + preco + "€";
 
-  document.getElementById("confirmButton").setAttribute('onclick', "confirm(" + order + "," + i + "," + preco + ")");
+  document.getElementById("confirmButton").setAttribute('onclick', "confirm(" + order + "," + i + "," + preco+ ")");
 }
 
 
@@ -94,7 +103,7 @@ function decrementa(order) {
     document.getElementById('dontless1').style.display = "none";
   }
   document.getElementById('square').innerHTML = "" + i + "";
-  preco -= prices[order];
+  var preco = prices[order] * i;
   document.getElementById('preco').innerHTML = "Preço: " + preco + "€";
 
   document.getElementById("confirmButton").setAttribute('onclick', "confirm(" + order + "," + i + "," + preco + ")");
@@ -142,20 +151,26 @@ function confirm(order, i, price) {
 function addButton (order) {
   var button = document.createElement("BUTTON");
   var att1 = document.createAttribute("class");
-  att1.value = "menuButtons1";
+  att1.value = "eventbutton";
   button.setAttributeNode(att1);
 
   var quantidade = getQuantidade();
   var precos = getPrecos();
-  button.appendChild(document.createTextNode(quantidade[order] + " "));
+ /* button.appendChild(document.createTextNode(quantidade[order] + " "));
   button.appendChild(document.createTextNode(precos[order] + "  "));
+  */
 
   var img = document.createElement("IMG");
   img.src = imgs[order];
   var att2 = document.createAttribute("class");
   att2.value = "menuIcons";
   img.setAttributeNode(att2);
+  button.appendChild(document.createTextNode(orders[order] + "  "));
   button.appendChild(img);
+
+  button.setAttribute('onclick', 'getFood(\'' + orders[order] + '\', \'' + quantidade[order] + '\', \'' + precos[order] + '\');');
+
+
 
   var scrollbar = document.getElementsByClassName("scrollbar")[0];
   scrollbar.appendChild(button);
