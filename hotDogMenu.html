@@ -16,7 +16,7 @@
 
 
 
-  <body onload="startTime(); checkLocation(); hideAmountSelection();"  onkeypress="displayAlert();">
+  <body onload="startTime(); checkLocation();"  onkeypress="displayAlert();">
 
 
     <div class="main_screen">
@@ -43,12 +43,12 @@
       </div>
 
       <div class="containerSelection">
-          <div id="preco"> Preço: 5€ </div>
+          <div id="preco"> </div>
           <div id="square"> 1 </div>
           <img class="imgas" id="add1" onclick='incrementa()' src="./assets/icons/add.png">
           <img class="imgas" id="less1" onclick='decrementa()' src="./assets/icons/less.png">
           <img class="imgas" id="dontless1" src="./assets/icons/less.png">
-          <button class="optionsPurchase" id="confirmButton" onclick='hideAmountSelection(); addItemToPurchase();'>Ok</button>
+          <button class="optionsPurchase" id="confirmButton">Ok</button>
           <button class="optionsPurchase" id="denyButton" onclick='hideAmountSelection();'>Cancel</button>
       </div>
 

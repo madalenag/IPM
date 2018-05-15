@@ -22,6 +22,7 @@ h1 {
 .imgas {
 	width: 0.5cm;
 	height: 0.5cm;
+	display: none
 }
 
 #add1 {
@@ -44,7 +45,7 @@ h1 {
 	top: 1.57cm;
 	left: 0.05cm;
 	opacity: 0.2;
-	display: inline;
+	display: none;
 }
 
 
@@ -59,6 +60,7 @@ h1 {
 	text-align: center;
 	font-size: 30px;
 	line-height: 50px;
+	display: none;
 }
 
 #quantidade {
@@ -73,6 +75,7 @@ h1 {
 	font-size: 0.15in;
 	color:white;
 	margin-top: 0.05in;
+	visibility: hidden;
 }
 
 

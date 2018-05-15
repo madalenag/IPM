@@ -43,14 +43,15 @@
 	border-radius: 5px;
 	position: relative;
 	margin-top:0.70in;
+  display: none;
 }
 
 #confirmButton {
-  background-color:	#318c10;
+  background-color:	#282828;
 }
 
 #denyButton {
   margin-left: 0in;
-  background-color:	#bc2a1a;
+  background-color:	#282828;
 }
 /*-------------------------*/
