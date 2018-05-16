@@ -507,8 +507,6 @@ h1 {
 	border: none;
 	color: white;
 	padding: 0.10in;
-	text-align: center;
-	text-decoration: none;
 	display: inline-block;
 	font-size: 0.14in;
 	margin: 2px 2px;
@@ -606,8 +604,14 @@ h1 {
 }
 
 .menuIcons {
-	width: 0.1736in;
+	width: 0.19in;
 	display: inline;
+	/*float: left;*/
+}
+
+.eventIcons {
+	width: 0.17in;
+	display: inline-block;
 	/*float: left;*/
 }
 

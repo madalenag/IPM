@@ -12,8 +12,8 @@ function allowPurchase() {
 
 var i = 1;
 var saldo = 59;
-var orders = ["XLDog", "CornDog", "Batatas", "Xburger", "Batatas", "Bebida", "Fatia", "Média", "Cerveja", "T-shirt", "Caneca", "Chapéu"];
-var imgs = ["./assets/icons/sausage (1).png", "./assets/icons/sausage.png", "./assets/icons/french-fries.png", 
+var orders = ["XLDog", "CornDog", "Gelado", "Xburger", "Batatas", "Bebida", "Fatia", "Média", "Cerveja", "T-shirt", "Caneca", "Chapéu"];
+var imgs = ["./assets/icons/sausage (1).png", "./assets/icons/sausage.png", "./assets/icons/ice-cream(1).png", 
 "./assets/icons/hamburger.png", "./assets/icons/french-fries.png", "./assets/icons/drink.png", 
 "./assets/icons/pizza (5).png","./assets/icons/pizza (4).png", "./assets/icons/pint.png",
  "./assets/icons/shirt1.png", "./assets/icons/mug.png", "./assets/icons/cap.png" ];
@@ -156,17 +156,14 @@ function addButton (order) {
 
   var quantidade = getQuantidade();
   var precos = getPrecos();
- /* button.appendChild(document.createTextNode(quantidade[order] + " "));
-  button.appendChild(document.createTextNode(precos[order] + "  "));
-  */
-
+  
   var img = document.createElement("IMG");
   img.src = imgs[order];
   var att2 = document.createAttribute("class");
-  att2.value = "menuIcons";
+  att2.value = "eventIcons";
   img.setAttributeNode(att2);
-  button.appendChild(document.createTextNode(orders[order] + "  "));
   button.appendChild(img);
+  button.appendChild(document.createTextNode( " " + orders[order]));
 
   button.setAttribute('onclick', 'getFood(\'' + orders[order] + '\', \'' + quantidade[order] + '\', \'' + precos[order] + '\');');
 
@@ -182,6 +179,12 @@ function cenas() {
     for (let j = 0; j < carr.length; j++)
       addButton(orders.indexOf(carr[j]));
   }
+}
+
+function getFood(name, horas, palco) {
+  document.getElementById('bubble1').style.visibility = "visible";
+  document.getElementById('cross1').style.visibility = "visible";
+  document.getElementById('bubble1').innerHTML = name + "\nQuant: " + horas + "\nPreço: " + palco + "€";
 }
 
 

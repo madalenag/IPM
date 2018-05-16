@@ -47,9 +47,7 @@ function showEvent (name, horas, palco) {
     var att = document.createAttribute("class");
     att.value = "eventbutton";
     btn.setAttributeNode(att);
-    /*var att = document.createAttribute("id");
-    att.value = "evento1";
-    btn.setAttributeNode(att);*/
+
     btn.setAttribute('onclick', 'getName(\'' + name + '\', \'' + horas + '\', \'' + palco + '\');');
     var scrollbar = document.getElementsByClassName("scrollbar")[0];
     scrollbar.appendChild(btn); 
@@ -60,12 +58,6 @@ function getName(name, horas, palco) {
   document.getElementById('bubble1').style.visibility = "visible";
   document.getElementById('cross1').style.visibility = "visible";
   document.getElementById('bubble1').innerHTML = name + "\n" + horas + "\n" + palco;
-}
-
-function getFood(name, horas, palco) {
-  document.getElementById('bubble1').style.visibility = "visible";
-  document.getElementById('cross1').style.visibility = "visible";
-  document.getElementById('bubble1').innerHTML = name + "\nQuant:" + horas + "\nPreço:" + palco + "€";
 }
 
 

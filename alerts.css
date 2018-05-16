@@ -30,6 +30,24 @@
 	opacity: 0.9;
 }
 
+
+.timesBubbles1 {
+	position: absolute;
+	width: 0.9in;
+	top: 0.25in;
+	left: 0.07in;
+  	text-align: center;
+	font-size: 14px;
+	font-family: "Ubuntu";
+  	line-height: 15px;
+  	background-color: #fff;
+  	border: 1px solid #202020;
+  	border-radius: 15px;
+	padding: 20px 5px;
+	z-index: 10;
+	opacity: 0.9;
+}
+
 #bubble1 {
 	visibility: hidden;
 }
