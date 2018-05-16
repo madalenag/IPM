@@ -11,7 +11,7 @@ function allowPurchase() {
 }
 
 var i = 1;
-var saldo = 59;
+var saldo = 30;
 var orders = ["XLDog", "CornDog", "Gelado", "Xburger", "Batatas", "Bebida", "Fatia", "Média", "Cerveja", "T-shirt", "Caneca", "Chapéu"];
 var imgs = ["./assets/icons/sausage (1).png", "./assets/icons/sausage.png", "./assets/icons/ice-cream(1).png", 
 "./assets/icons/hamburger.png", "./assets/icons/french-fries.png", "./assets/icons/drink.png", 
@@ -24,6 +24,7 @@ var prices = [3, 4, 2, 3, 2, 1.5, 2, 4, 1, 6, 3, 4];
 var preco = 0;
 
 
+
 function hideAmountSelection () {
   var buttons = document.getElementsByClassName("scrollbar");
 
@@ -33,6 +34,7 @@ function hideAmountSelection () {
   var cont = document.getElementsByClassName("containerSelection");
 
   document.getElementById("preco").style.visibility = "hidden";
+  document.getElementById("saldo").style.visibility = "hidden";
   document.getElementById("square").style.display = "none";
   document.getElementById("add1").style.display = "none";
   document.getElementById("dontless1").style.display = "none";
@@ -51,7 +53,9 @@ function showAmountSelecction (order) {
     buttons[j].style.display = "none";
 
   document.getElementById("preco").style.visibility = "visible";
+  document.getElementById("saldo").style.visibility = "visible";
   console.log(document.getElementById("preco"));
+  document.getElementById('saldo').innerHTML = "Saldo: " + getSaldo() + "€";
   document.getElementById('preco').innerHTML = "Preço: " + prices[order] + "€";
   document.getElementById("square").style.display = "inline";
   document.getElementById("add1").style.display = "inline-block";
@@ -112,11 +116,14 @@ function decrementa(order) {
 
 
 function confirm(order, i, price) {
-  var sald = saldo - price;
-  if (sald < 0) {
-    window.alert("Não");
-  } 
-  else {
+  var old_saldo;
+  if (getSaldo() === null)
+    old_saldo = 30;
+  else 
+    old_saldo = getSaldo();
+
+  var sald = old_saldo - price;
+
     if (getCarrinho() === null) {
       carrinho.push(orders[order]);
       loadCarrinho(carrinho);
@@ -141,10 +148,6 @@ function confirm(order, i, price) {
       loadQuantidade(quant);
     }
     loadSaldo(sald);
-  }
-
-  window.location.assign("showCarrinho.html");
-
 }
 
 
@@ -166,7 +169,6 @@ function addButton (order) {
   button.appendChild(document.createTextNode( " " + orders[order]));
 
   button.setAttribute('onclick', 'getFood(\'' + orders[order] + '\', \'' + quantidade[order] + '\', \'' + precos[order] + '\');');
-
 
 
   var scrollbar = document.getElementsByClassName("scrollbar")[0];
