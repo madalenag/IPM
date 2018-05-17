@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fingerprint.css">
+    <link rel="stylesheet" href="ordersStyle.css">
+    <script src="js.js"></script>
+
+    <title>Interfaces Pessoa Máquina - iRave</title>
+  </head>
+
+
+
+  <body onload="startTime(); checkLocation();" onkeypress="displayAlert();">
+
+    <div class="main_screen">
+    <img id="cross2" style="display: none" onclick= "displayAlert();" src="./assets/icons/cross.png">
+
+      <div id="status_bar">
+        <div id="clock"></div>
+        <img class ="imgstatus" id="alerts" src="./assets/icons/pin.png">
+        <img class ="imgstatus" id="alerts1" style="left: 0.5cm;" src="./assets/icons/alarmbell.png">
+      </div>
+
+      <div class="container">
+        <div class="acceptPurchaseText2">Saldo Insuficiente!</div>
+        <button class="menuButtons3" onclick='location.assign("carregarSaldo.html")'><img style="width: 0.2in; float: left;" src="./assets/icons/money.png">Carregar</button>
+        <button class="menuButtons3" onclick='location.assign("purchaseMenu.html")'><img style="width: 0.2in; float: left;" src="./assets/icons/back.png">Cancelar</button>
+      </div>
+
+      <div id="backButton" onclick='location.assign("purchaseMenu.html")'> </div>
+      <div id="lockButton" onclick='location.assign("lockscreen.html")'> </div>
+
+    </div>
+
+    <img id="watch" src="./assets/xlarge1-114924.jpg" draggable="false">
+
+  </body>
+</html>

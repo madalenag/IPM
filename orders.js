@@ -1,22 +1,5 @@
 /*changes the appearance of the finalizeButton so that it allows the purchase when added an item*/
 
-/*function allowPurchase() {
-  if(getCarrinho() !== null) {
-    document.getElementById("invisibleButton").style.display = "inline";
-    document.getElementById("invisibleButton").style.visibility = "hidden";
-    document.getElementById("finalizeButton").style.position = "fixed";
-    document.getElementById("finalizeButton").style.top = "3.74in";
-    document.getElementById("finalizeButton").style.left = "6.5in";
-    document.getElementById("finalizeButton").style.width = "2cm";
-    document.getElementById("finalizeButton").style.height = "0.8cm";
-    document.getElementById("finalizeButton").style.backgroundColor = "#56f75e";
-    document.getElementById("finalizeButton").style.border = "solid #026007";
-    document.getElementById("fin").innerHTML = "Finalizar";
-    document.getElementById("finalizeButton").src = "./assets/icons/shopping-cart-green.png";
-  }
-}*/
-
-
 function allowPurchase() {
   if(getCarrinho() !== null) {
     document.getElementById("green_car").style.display = "inline";
@@ -30,29 +13,48 @@ function allowPurchase() {
 }
 
 function finalizePurchase() {
-  var buttons = document.getElementsByClassName("container");
+  var buttons = document.getElementsByClassName("scrollbar");
   for (var j = 0; j < buttons.length; j++)
     buttons[j].style.display = "none";
 
-  document.getElementById("preco").style.visibility = "hidden";
-  document.getElementById("saldo").style.visibility = "hidden";
-  document.getElementById("square").style.display = "none";
-  document.getElementById("add1").style.display = "none";
-  document.getElementById("dontless1").style.display = "none";
-  document.getElementById("less1").style.display = "none";
+  document.getElementById("preco2").style.visibility = "visible";
+  document.getElementById("preco2").innerHTML = "Custo Total: " + getTotalPrecos() + "€";
+  document.getElementById("saldo2").style.visibility = "visible";
+  if(getSaldo() !== null) {
+    document.getElementById("saldo2").innerHTML = "Saldo: " + getSaldo() + "€";
+  }
+  else {
+    document.getElementById("saldo2").innerHTML = "Saldo: 0€";
+  }
+  document.getElementById("purchaseText2").style.visibility = "visible";
+  document.getElementById("confirmButton").style.display = "inline-block";
+  document.getElementById("denyButton").style.display = "inline-block";
+}
 
-  var options = document.getElementsByClassName("optionsPurchase");
-  for (var j = 0; j < options.length; j++)
-    options[j].style.display = "none";
-
-
-  var elements = document.getElementsByClassName("finalizePurchaseButtons");
-  for(var j=0; j<elements.length; j++) {
-    elements[j].style.display = "inline";
+function yesPurchase() {
+  var saldo = getSaldo();
+  var total = getTotalPrecos();
+  if(saldo >= total) {
+    loadSaldo(saldo - total);
+    remove(); /*remove tudo do carrinho se a compra for efetuada*/
+    window.location.assign("meetingPoints.html");
+  }
+  else {
+    window.location.assign("denyPurchase.html");
   }
 }
 
+function noPurchase() {
+  var buttons = document.getElementsByClassName("scrollbar");
+  for (var j = 0; j < buttons.length; j++)
+    buttons[j].style.display = "inline";
 
+  document.getElementById("preco2").style.visibility = "hidden";
+  document.getElementById("saldo2").style.visibility = "hidden";
+  document.getElementById("purchaseText2").style.visibility = "hidden";
+  document.getElementById("confirmButton").style.display = "none";
+  document.getElementById("denyButton").style.display = "none";
+}
 
 var i = 1;
 var saldo = 30;
@@ -294,6 +296,15 @@ function getQuantidade () {
   return JSON.parse(localStorage.getItem("Quantidade"));
 }
 
+function getTotalPrecos() {
+  var precos = getPrecos();
+  var total = 0;
+  for(var j = 0; j < precos.length; j++) {
+    total += precos[j];
+  }
+  return total;
+}
+
 function remove() {
   localStorage.removeItem("Carrinho");
 
@@ -362,16 +373,16 @@ function changeVisibilityRem (order) {
   if (removerButton.style.visibility == "hidden")
     removerButton.style.visibility = "visible";
 
-  var yes = document.createElement("BUTTON"); 
+  var yes = document.createElement("BUTTON");
   yes.appendChild(document.createTextNode("Sim"));
-  var no = document.createElement("BUTTON"); 
+  var no = document.createElement("BUTTON");
   no.appendChild(document.createTextNode("Não"));
 
   var att1 = document.createAttribute("class");
   att1.value = "option1";
   yes.setAttributeNode(att1);
   yes.setAttribute('onclick', ' removeElem(\'' + order + '\'); window.location.assign("showCarrinho.html");');
-  
+
   var att2 = document.createAttribute("class");
   att2.value = "option2";
   no.setAttributeNode(att2);
@@ -392,7 +403,7 @@ function showRemButtons() {
   if (storedData != null) {
     for (let j = 0; j < len; j++)
       addRemButton(orders.indexOf(storedData[j]));
-  } 
+  }
 }
 
 

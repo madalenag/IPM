@@ -88,6 +88,25 @@ function positionStagePin(targetId) {
   }
 }
 
+function positionMeetingPointPin(targetId) {
+  if(targetId == "target1") {
+    document.getElementById("target1").style.left = "1.6cm";
+    document.getElementById("target1").style.top = "1.8cm";
+    document.getElementById("target1").style.visibility = "visible";
+
+  }
+  else if(targetId == "target2") {
+    document.getElementById("target2").style.left = "1.2cm";
+    document.getElementById("target2").style.top = "0.33cm";
+    document.getElementById("target2").style.visibility = "visible";
+  }
+  else {
+    document.getElementById("target3").style.left = "0.5cm";
+    document.getElementById("target3").style.top = "1.8cm";
+    document.getElementById("target3").style.visibility = "visible";
+  }
+}
+
 function positionEmergencyPin(targetId) {
   if(targetId == "target1") {
     document.getElementById("target1").style.left = "0.2cm";

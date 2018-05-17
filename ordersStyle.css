@@ -16,6 +16,12 @@
 .acceptPurchaseText {
   margin-top: 0.1in;
 }
+
+.acceptPurchaseText2 {
+  margin-top: 0.1in;
+  color: #ed3936;
+  text-align: center;
+}
 /*-----------------------*/
 
 /*amountSelection.html buttons*/
@@ -34,6 +40,36 @@
 	position: relative;
 	margin-top:0.65in;
   display: none;
+}
+
+.optionsPurchase2 {
+	width: 0.5in;
+	background-color:	#282828;
+	border: none;
+	color: white;
+	padding: 0.04in 0in;
+	text-align: center;
+	text-decoration: none;
+	font-size: 0.13in;
+	margin-left: 0.05in;
+	border-radius: 5px;
+	position: relative;
+  display: none;
+}
+
+.optionsPurchase3 {
+	width: 0.5in;
+	background-color:	#282828;
+	border: none;
+	color: white;
+	padding: 0.04in 0in;
+	text-align: center;
+	text-decoration: none;
+	font-size: 0.13in;
+	margin-left: 0.05in;
+	border-radius: 5px;
+	position: relative;
+  display: "inline";
 }
 
 #confirmButton {
@@ -67,6 +103,31 @@
   padding: 0.08in;
 }
 
+#purchaseText2 {
+  text-align: center;
+  font-size: 15px;
+  margin: 0px;
+  padding: 0.08in;
+  color: white;
+  font-weight: bold;
+}
+
+#preco2 {
+	text-align: center;
+	font-size: 0.13in;
+	color: #e0e2e5;
+	margin-top: 0.02in;
+	visibility: hidden;
+}
+
+#saldo2 {
+	text-align: center;
+	font-size: 0.13in;
+	color: #e0e2e5;
+	margin-top: 0.02in;
+	visibility: hidden;
+}
+
 /*conta.html buttons*/
 
 #carregarSaldo {
@@ -87,7 +148,7 @@
 #money{
   position: relative;
   float: left;
-  
+
   width: 0.6cm;
   height: 0.6cm;
 }

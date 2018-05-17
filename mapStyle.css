@@ -13,6 +13,13 @@
 	left: 0.28in;
 }
 
+#mapText3 {
+	top: 1.15in;
+	left: -0.01in;
+	margin-left: 0.09in;
+	text-align: center;
+}
+
 .timesBubbles {
 	position: absolute;
 	width: 0.9in;

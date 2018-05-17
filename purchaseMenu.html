@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="ordersStyle.css">
     <script src="js.js"></script>
     <script src="contacts.js"></script>
+    <script src="orders.js"></script>
 
     <title>Interfaces Pessoa Máquina - iRave</title>
   </head>
@@ -28,13 +29,18 @@
           <div class="scrollbar" id="scrollbar-hidden">
             <button class="menuName" style="padding-top: 0.00001in; padding-bottom:0.01in;">  <div class="nomes" style="display: inline-block;"> Compras </div> </button>
             <button class="menuButtons3" id="finalizeButton" onclick='finalizePurchase()'>Finalizar</button>
-            <button class="menuButtons3" id="removePersonButton" onclick='location.assign("removeCarrinho.html")'>Remover</button>
+            <button class="menuButtons3" id="removePersonButton" onclick='window.location = "removeCarrinho.html"'>Remover</button>
             <button class="menuButtons3" id="localizatePersonButton" onclick='window.location = "showCarrinho.html"'>Carrinho</button>
           </div>
       </div>
 
-      <div id="preco" style="visibility: hidden"> </div>
-      <div id="saldo" style="visibility: hidden"> </div>
+      <div class="purchaseItems">
+        <div id="preco2" style="visibility: hidden"> </div>
+        <div id="saldo2" style="visibility: hidden"> </div>
+        <div id="purchaseText2" style="visibility: hidden">Finalizar compra? </div>
+        <button class="optionsPurchase2" id="confirmButton" onclick="yesPurchase()">Sim</button>
+        <button class="optionsPurchase2" id="denyButton" onclick="noPurchase()">Não</button>
+      </div>
 
       <div id="backButton" onclick='location.assign("orders.html")'> </div>
       <div id="lockButton" onclick='location.assign("lockscreen.html")'> </div>
