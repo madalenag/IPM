@@ -337,8 +337,16 @@ function removeElem (order) {
   var storedData = getCarrinho();
   var len = storedData.length;
 
-  var index = storedData.indexOf(orders[order])
+  var index = storedData.indexOf(orders[order]);
   storedData.splice(index,1);
+
+  var precos = getPrecos();
+  precos[order] = 0;
+  loadPrecos(precos);
+
+  var quant = getQuantidade();
+  quant[order] = 0;
+  loadQuantidade(quant);
 
   loadCarrinho(storedData);
 }
