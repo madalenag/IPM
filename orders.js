@@ -319,6 +319,6 @@ function carregarSaldo(money){
   var sald = getSaldo();
   sald += money;
   loadSaldo(sald);
-  window.location.assign("conta.html")
+  window.location.assign("carregamentoBemSucedido.html")
 
 }
