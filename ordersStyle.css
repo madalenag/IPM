@@ -76,3 +76,75 @@
   margin: 0px;
   padding: 0.08in;
 }
+
+/*conta.html buttons*/
+
+#carregarSaldo {
+  position: relative;
+  top: 0.23in;
+  left: 0.05in;
+  width: 1in;
+  height: 0.4in;
+  background-color: #282828;
+  border: none;
+  color: white;
+  text-align: right;
+  display: inline-block;
+  border-radius: 5px;
+  font-size: 0.15in;
+}
+
+#money{
+  position: relative;
+  float: left;
+  
+  width: 0.6cm;
+  height: 0.6cm;
+}
+
+#saldoConta{
+  text-align: center;
+  font-size: 0.18in;
+  color:white;
+  margin-top: 0.05in;
+}
+
+#carregar{
+  position: relative;
+  top: 0.05cm;
+}
+
+/* carrgarSaldo.html */
+
+.prices {
+  position: absolute;
+  top: 0.4in;
+  width: 0.45in;
+  background-color: #282828;
+  color: white;
+  padding: 0.10in;
+  text-align: center;
+  font-size: 0.14in;
+  margin: 3px 3px;
+  border-radius: 10px;
+  border: grey solid 2px;
+  display: inline-block;
+}
+
+#priceLeft {
+  left: 0.05in;
+}
+
+#priceRight {
+  left: 0.57in;
+}
+
+#priceDLeft {
+  left: 0.05in;
+  top: 0.9in;
+}
+
+#priceDRight {
+  left: 0.57in;
+  top: 0.9in;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ordersStyle.css">
+    <script src="js.js"></script>
+    <script src="contacts.js"></script>
+    <script src="localize.js"></script>
+    <script src="alerts.js"></script>
+    <script src="orders.js"></script>
+
+    <title>Interfaces Pessoa Máquina - iRave</title>
+  </head>
+
+
+
+  <body onload="startTime(); checkLocation(); contaSaldo();"  onkeypress="displayAlert();">
+
+    <div class="main_screen">
+    <img id="cross2" style="display: none" onclick= "displayAlert();" src="./assets/icons/cross.png">
+
+      <div id="status_bar">
+        <div id="clock"></div>
+        <img class ="imgstatus" id="alerts" src="./assets/icons/pin.png">
+        <img class ="imgstatus" id="alerts1" style="left: 0.5cm;" src="./assets/icons/alarmbell.png">
+      </div>
+
+      <div class="container">
+        <div id="saldoConta" style="font-size: 0.15in"> </div>
+
+        <button class="prices" id="priceLeft" onclick='carregarSaldo(5)'>5€</button>
+          <button class="prices" id="priceRight" onclick='carregarSaldo(10)'>10€</button>
+          <button class="prices" id="priceDLeft" onclick='carregarSaldo(20)'>20€</button>
+          <button class="prices" id="priceDRight" onclick='carregarSaldo(50)'>50€</button>
+
+      </div>
+
+      <div id="backButton" onclick='location.assign("orders.html")'> </div>
+      <div id="lockButton" onclick='window.location.assign("lockscreen.html")'> </div>
+
+    </div>
+
+    <img id="watch" src="./assets/xlarge1-114924.jpg" draggable="false">
+
+  </body>
+</html>

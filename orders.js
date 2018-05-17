@@ -308,3 +308,17 @@ function remove() {
     quant[j] = 0;
   loadQuantidade(quant);
 }
+
+/* conta.html */
+
+function contaSaldo(){
+  document.getElementById('saldoConta').innerHTML = "Saldo: " + getSaldo() + "€";
+}
+
+function carregarSaldo(money){
+  var sald = getSaldo();
+  sald += money;
+  loadSaldo(sald);
+  window.location.assign("conta.html")
+
+}
