@@ -126,6 +126,7 @@ function showAmountSelecction (order) {
   document.getElementById("preco").style.visibility = "visible";
   document.getElementById("saldo").style.visibility = "visible";
   console.log(document.getElementById("preco"));
+  document.getElementById('square').innerHTML = i;
   document.getElementById('saldo').innerHTML = "Saldo: " + new_saldo + "€";
   document.getElementById('preco').innerHTML = "Preço: " + prices[order] + "€";
   document.getElementById("square").style.display = "inline";
