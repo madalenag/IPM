@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ordersStyle.css">
+    <script src="js.js"></script>
+    <script src="contacts.js"></script>
+
+    <title>Interfaces Pessoa Máquina - iRave</title>
+  </head>
+
+
+
+  <body onload="startTime(); checkLocation();" onkeypress="displayAlert();">
+
+    <div class="main_screen">
+    <img id="cross2" style="display: none" onclick= "displayAlert();" src="./assets/icons/cross.png">
+
+      <div id="status_bar">
+        <div id="clock"></div>
+        <img class ="imgstatus" id="alerts" src="./assets/icons/pin.png">
+        <img class ="imgstatus" id="alerts1" style="left: 0.5cm;" src="./assets/icons/alarmbell.png">
+      </div>
+
+      <div class="container">
+          <div class="scrollbar" id="scrollbar-hidden">
+            <button class="menuName" style="padding-top: 0.00001in; padding-bottom:0.01in;">  <div class="nomes" style="display: inline-block;"> Compras </div> </button>
+            <button class="menuButtons3" id="finalizeButton" onclick='finalizePurchase()'>Finalizar</button>
+            <button class="menuButtons3" id="removePersonButton" onclick='location.assign("removeCarrinho.html")'>Remover</button>
+            <button class="menuButtons3" id="localizatePersonButton" onclick='window.location = "showCarrinho.html"'>Carrinho</button>
+          </div>
+      </div>
+
+      <div id="preco" style="visibility: hidden"> </div>
+      <div id="saldo" style="visibility: hidden"> </div>
+
+      <div id="backButton" onclick='location.assign("orders.html")'> </div>
+      <div id="lockButton" onclick='location.assign("lockscreen.html")'> </div>
+
+    </div>
+
+    <img id="watch" src="./assets/xlarge1-114924.jpg" draggable="false">
+
+  </body>
+</html>

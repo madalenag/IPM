@@ -110,7 +110,7 @@ function showAmountSelecction (order) {
   var new_saldo;
 
   if (getSaldo() === null)
-    new_saldo = 30;
+    new_saldo = 0;
   else
     new_saldo = getSaldo();
 
@@ -296,7 +296,6 @@ function getQuantidade () {
 
 function remove() {
   localStorage.removeItem("Carrinho");
-  localStorage.removeItem("Saldo");
 
   var precos = getPrecos();
   for (let j = 0; j < precos.length; j++)
@@ -312,13 +311,103 @@ function remove() {
 /* conta.html */
 
 function contaSaldo(){
-  document.getElementById('saldoConta').innerHTML = "Saldo: " + getSaldo() + "€";
+  var sald;
+  if (getSaldo()===null)
+    sald = 0
+  else
+    sald = getSaldo();
+  document.getElementById('saldoConta').innerHTML = "Saldo: " + sald + "€";
 }
 
 function carregarSaldo(money){
-  var sald = getSaldo();
+  var sald;
+  if (getSaldo()===null)
+    sald = 0
+  else
+    sald = getSaldo();
   sald += money;
   loadSaldo(sald);
   window.location.assign("carregamentoBemSucedido.html")
 
+}
+
+
+/*remover*/
+function removeElem (order) {
+  var storedData = getCarrinho();
+  var len = storedData.length;
+
+  var index = storedData.indexOf(orders[order])
+  storedData.splice(index,1);
+
+  loadCarrinho(storedData);
+}
+
+
+function changeVisibilityRem (order) {
+  var buttons = document.getElementsByClassName("scrollbar");
+
+  for (var i = 0; i < buttons.length; i++)
+    buttons[i].style.display = "none";
+
+  var removerButton = document.getElementById("remover");
+  if (removerButton.style.visibility == "hidden")
+    removerButton.style.visibility = "visible";
+
+  var yes = document.createElement("BUTTON"); 
+  yes.appendChild(document.createTextNode("Sim"));
+  var no = document.createElement("BUTTON"); 
+  no.appendChild(document.createTextNode("Não"));
+
+  var att1 = document.createAttribute("class");
+  att1.value = "option1";
+  yes.setAttributeNode(att1);
+  yes.setAttribute('onclick', ' removeElem(\'' + order + '\'); window.location.assign("showCarrinho.html");');
+  
+  var att2 = document.createAttribute("class");
+  att2.value = "option2";
+  no.setAttributeNode(att2);
+  no.setAttribute('onclick', 'window.location.assign("showCarrinho.html");');
+
+  var cont = document.getElementById("container");
+  cont.appendChild(removerButton);
+  cont.appendChild(yes);
+  cont.appendChild(no);
+}
+
+
+function showRemButtons() {
+  var len, name;
+  var storedData = getCarrinho();
+  len = storedData.length;
+
+  if (storedData != null) {
+    for (let j = 0; j < len; j++)
+      addRemButton(orders.indexOf(storedData[j]));
+  } 
+}
+
+
+function addRemButton (order) {
+  var button = document.createElement("BUTTON");
+  var att1 = document.createAttribute("class");
+  att1.value = "eventbutton";
+  button.setAttributeNode(att1);
+
+  var quantidade = getQuantidade();
+  var precos = getPrecos();
+
+  var img = document.createElement("IMG");
+  img.src = imgs[order];
+  var att2 = document.createAttribute("class");
+  att2.value = "eventIcons";
+  img.setAttributeNode(att2);
+  button.appendChild(img);
+  button.appendChild(document.createTextNode( " " + orders[order]));
+
+  button.setAttribute('onclick', 'changeVisibilityRem(\'' + order + '\');');
+
+
+  var scrollbar = document.getElementsByClassName("scrollbar")[0];
+  scrollbar.appendChild(button);
 }

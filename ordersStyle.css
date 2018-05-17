@@ -1,18 +1,8 @@
 /*button that changes when item is added to cart, *shopMenus.html*/
 #finalizeButton {
-  width: 0.27in;
-  height: 0.27in;
-  background-color: 	#202020;
-  border: dotted 	#080808;
-  color: #C8C8C8;
-  padding: 0px 18px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 0.14in;
-  margin: 4px 0.16in;
+  background-color:   #2a4a7c;
+  color: white;
   border-radius: 5px;
-
 }
 /*-----------------------*/
 
