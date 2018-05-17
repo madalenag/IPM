@@ -16,7 +16,7 @@
 
 
 
-  <body onload="startTime(); checkLocation();"  onkeypress="displayAlert();">
+  <body onload="startTime(); checkLocation(); allowPurchase()"  onkeypress="displayAlert();">
 
     <div class="main_screen">
 
@@ -27,8 +27,12 @@
       </div>
 
       <div class="container">
-          <div class="scrollbar" id="scrollbar-style" onscroll="scrollfunction('scrollbar-style', getScrollIdRest());">
-            <button class="menuName" > <img class="menuIcons" style="float: left" id ="recintoIcon" > <div class="nomes" style="display: inline-block;"> Burger </div> </button>
+          <div class="scrollbar" id="scrollbar-style" onscroll="scrollfunction('scrollbar-style', getScrollId());">
+            <button class="menuName1" > <img class="menuIcons" style="float: left" id ="recintoIcon" > <div class="nomes" style="display: inline-block;"> Burger </div> 
+              <span style="display:inline-block; width: 0.15cm;"></span>
+              <img class="imgclas" id="green_car" onclick="carrinhoOnClick();" src="./assets/icons/shopping-cart.png">
+              <img class="imgclas" id="grey_car" src="./assets/icons/shopping-cart-grey2.png">
+            </button>
 
             <button class="menuButtonscenter" id="recintoButton" onclick='showAmountSelecction(3);'><img class="menuIcons" style="float: left" id ="recintoIcon" src="./assets/icons/hamburger.png"> <div class="nomes" style="display: inline-block"> Xburger </div> </button>
 
@@ -36,14 +40,16 @@
 
             <button class="menuButtons" id="localizePersonButton" onclick='showAmountSelecction(5);'><img class="menuIcons" id ="personIcon" src="./assets/icons/drink.png"> <div class="nomes"> Bebida </div> </button>
 
-            <button class="menuButtons" style="visibility: hidden"> <img class="menuIcons"> <div class="nomes" style="display: inline-block"> Recinto </div> </button>
+            <button class="menuButtons" id="invisibleButton" style="visibility: hidden"> <img class="menuIcons"> <div class="nomes" style="display: inline-block"> Recinto </div> </button>
+
+            <!--<img id="finalizeButton" onclick="finalizePurchase()" src="./assets/icons/shopping-cart-grey2.png">-->
           </div>
 
       </div>
 
 
       <div class="containerSelection">
-          <div id="preco"> Preço: 5€ </div>
+          <div id="preco"> </div>
           <div id="saldo"> </div>
           <div id="square"> 1 </div>
           <img class="imgas" id="add1" src="./assets/icons/add.png">
@@ -52,6 +58,15 @@
           <button class="optionsPurchase" id="confirmButton">Ok</button>
           <button class="optionsPurchase" id="denyButton" onclick='hideAmountSelection();'>Cancel</button>
       </div>
+
+      <div class="finalizePurchaseButtons" style="display: none;">
+        <div class="scrollbar" id="scrollbar-hidden">
+          <p id="purchaseText" style="color: white;"> Finalizar Compra? </p>
+          <button class="fin1" onclick='window.location = "findingFriends.html"'>Sim</button>
+          <button class="fin2" onclick='window.location = "removePerson.html"'>Não</button>
+        </div>
+      </div>
+
 
       <div id="backButton" onclick='window.location.assign("orders.html")'> </div>
       <div id="lockButton" onclick='window.location.assign("lockscreen.html")'> </div>

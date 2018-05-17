@@ -1,20 +1,64 @@
 /*changes the appearance of the finalizeButton so that it allows the purchase when added an item*/
+
+/*function allowPurchase() {
+  if(getCarrinho() !== null) {
+    document.getElementById("invisibleButton").style.display = "inline";
+    document.getElementById("invisibleButton").style.visibility = "hidden";
+    document.getElementById("finalizeButton").style.position = "fixed";
+    document.getElementById("finalizeButton").style.top = "3.74in";
+    document.getElementById("finalizeButton").style.left = "6.5in";
+    document.getElementById("finalizeButton").style.width = "2cm";
+    document.getElementById("finalizeButton").style.height = "0.8cm";
+    document.getElementById("finalizeButton").style.backgroundColor = "#56f75e";
+    document.getElementById("finalizeButton").style.border = "solid #026007";
+    document.getElementById("fin").innerHTML = "Finalizar";
+    document.getElementById("finalizeButton").src = "./assets/icons/shopping-cart-green.png";
+  }
+}*/
+
+
 function allowPurchase() {
-  document.getElementById("invisibleButton").style.display = "inline";
-  document.getElementById("invisibleButton").style.visibility = "hidden";
-  document.getElementById("finalizeButton").style.position = "fixed";
-  document.getElementById("finalizeButton").style.top = "3.68in";
-  document.getElementById("finalizeButton").style.left = "6.55in";
-  document.getElementById("finalizeButton").style.backgroundColor = "#56f75e";
-  document.getElementById("finalizeButton").style.border = "solid #026007";
-  document.getElementById("finalizeButton").src = "./assets/icons/shopping-cart-green.png";
+  if(getCarrinho() !== null) {
+    document.getElementById("green_car").style.display = "inline";
+    document.getElementById("grey_car").style.display = "none";
+  }
+  else {
+    document.getElementById("green_car").style.display = "none";
+    document.getElementById("grey_car").style.display = "inline";
+    /*document.getElementById("finalizeButton").src = "./assets/icons/shopping-cart-green.png";*/
+  }
 }
+
+function finalizePurchase() {
+  var buttons = document.getElementsByClassName("container");
+  for (var j = 0; j < buttons.length; j++)
+    buttons[j].style.display = "none";
+
+  document.getElementById("preco").style.visibility = "hidden";
+  document.getElementById("saldo").style.visibility = "hidden";
+  document.getElementById("square").style.display = "none";
+  document.getElementById("add1").style.display = "none";
+  document.getElementById("dontless1").style.display = "none";
+  document.getElementById("less1").style.display = "none";
+
+  var options = document.getElementsByClassName("optionsPurchase");
+  for (var j = 0; j < options.length; j++)
+    options[j].style.display = "none";
+
+
+  var elements = document.getElementsByClassName("finalizePurchaseButtons");
+  for(var j=0; j<elements.length; j++) {
+    elements[j].style.display = "inline";
+  }
+}
+
+
 
 var i = 1;
 var saldo = 30;
 var orders = ["XLDog", "CornDog", "Gelado", "Xburger", "Batatas", "Bebida", "Fatia", "Média", "Cerveja", "T-shirt", "Caneca", "Chapéu"];
-var imgs = ["./assets/icons/sausage (1).png", "./assets/icons/sausage.png", "./assets/icons/ice-cream(1).png", 
-"./assets/icons/hamburger.png", "./assets/icons/french-fries.png", "./assets/icons/drink.png", 
+var imgs = ["./assets/icons/sausage (1).png", "./assets/icons/sausage.png", "./assets/icons/ice-cream(1).png",
+"./assets/icons/hamburger.png", "./assets/icons/french-fries.png", "./assets/icons/drink.png",
 "./assets/icons/pizza (5).png","./assets/icons/pizza (4).png", "./assets/icons/pint.png",
  "./assets/icons/shirt1.png", "./assets/icons/mug.png", "./assets/icons/cap.png" ];
 var carrinho = [];
@@ -26,36 +70,63 @@ var preco = 0;
 
 
 function hideAmountSelection () {
-  var buttons = document.getElementsByClassName("scrollbar");
+  var buttons = document.getElementsByClassName("container");
 
   for (var j = 0; j < buttons.length; j++)
     buttons[j].style.display = "inline-block";
 
-  var cont = document.getElementsByClassName("containerSelection");
 
   document.getElementById("preco").style.visibility = "hidden";
   document.getElementById("saldo").style.visibility = "hidden";
   document.getElementById("square").style.display = "none";
   document.getElementById("add1").style.display = "none";
   document.getElementById("dontless1").style.display = "none";
+  document.getElementById("less1").style.display = "none";
 
   var options = document.getElementsByClassName("optionsPurchase");
   for (var j = 0; j < options.length; j++)
     options[j].style.display = "none";
 
+
+  var elem = document.getElementsByClassName("carrinhoOnClick");
+  for (var j = 0; j < elem.length; j++)
+    elem[j].style.display = "none";
+
+  var elements = document.getElementsByClassName("finalizePurchaseButtons");
+  for(var j=0; j<elements.length; j++)
+    elements[j].style.display = "none";
+
 }
 
 
 function showAmountSelecction (order) {
-  var buttons = document.getElementsByClassName("scrollbar");
+  i = 1;
+
+  var buttons = document.getElementsByClassName("container");
 
   for (var j = 0; j < buttons.length; j++)
     buttons[j].style.display = "none";
 
+  var new_saldo;
+
+  if (getSaldo() === null)
+    new_saldo = 30;
+  else
+    new_saldo = getSaldo();
+
+
+  var elem = document.getElementsByClassName("carrinhoOnClick");
+  for (var j = 0; j < elem.length; j++)
+    elem[j].style.display = "none";
+
+  var elements = document.getElementsByClassName("finalizePurchaseButtons");
+  for(var j=0; j<elements.length; j++)
+    elements[j].style.display = "none";
+
   document.getElementById("preco").style.visibility = "visible";
   document.getElementById("saldo").style.visibility = "visible";
   console.log(document.getElementById("preco"));
-  document.getElementById('saldo').innerHTML = "Saldo: " + getSaldo() + "€";
+  document.getElementById('saldo').innerHTML = "Saldo: " + new_saldo + "€";
   document.getElementById('preco').innerHTML = "Preço: " + prices[order] + "€";
   document.getElementById("square").style.display = "inline";
   document.getElementById("add1").style.display = "inline-block";
@@ -119,10 +190,8 @@ function confirm(order, i, price) {
   var old_saldo;
   if (getSaldo() === null)
     old_saldo = 30;
-  else 
+  else
     old_saldo = getSaldo();
-
-  var sald = old_saldo - price;
 
     if (getCarrinho() === null) {
       carrinho.push(orders[order]);
@@ -147,7 +216,9 @@ function confirm(order, i, price) {
       loadPrecos(precos);
       loadQuantidade(quant);
     }
-    loadSaldo(sald);
+
+    allowPurchase();
+    hideAmountSelection();
 }
 
 
@@ -159,7 +230,7 @@ function addButton (order) {
 
   var quantidade = getQuantidade();
   var precos = getPrecos();
-  
+
   var img = document.createElement("IMG");
   img.src = imgs[order];
   var att2 = document.createAttribute("class");
@@ -224,6 +295,7 @@ function getQuantidade () {
 
 function remove() {
   localStorage.removeItem("Carrinho");
+  localStorage.removeItem("Saldo");
 
   var precos = getPrecos();
   for (let j = 0; j < precos.length; j++)
@@ -235,4 +307,3 @@ function remove() {
     quant[j] = 0;
   loadQuantidade(quant);
 }
-

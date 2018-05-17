@@ -192,6 +192,15 @@ h1 {
 	height: 1.2cm;
 }
 
+.imgclas {
+	position: relative;
+	padding-top: 0px;
+	top:0.2cm;
+	right:-0.3cm;
+	width: 0.66cm;
+	height: 0.66cm;
+}
+
 .imgstatus {
 	position: absolute;
 	left: 0.1cm;
@@ -565,6 +574,24 @@ h1 {
     z-index: 13;
 }
 
+#fin {
+	position: absolute;
+	top:0.1cm;
+	left:0.3cm;
+	font-family: "Ubuntu";
+	font-size: 0.14in;
+    color:black;
+}
+
+#green_car {
+	display: none;
+}
+
+#grey_car {
+	display: inline;
+}
+
+
 .menuName {
 	font-family: "Ubuntu";
 	width: 1in;
@@ -582,6 +609,27 @@ h1 {
 	border-right: none;
 	border-bottom: solid 0.1px;
 }
+
+
+
+.menuName1 {
+	font-family: "Ubuntu";
+	width: 1in;
+	background-color: black;
+	color: white;
+	padding-top: 0in;
+	padding-bottom: 0.09in;
+	text-align: left;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 0.12in;
+	margin: 1.5px 1.5px;
+	border-left: none;
+	border-top: none;
+	border-right: none;
+	border-bottom: solid 0.1px;
+}
+
 .menuButtons3 {
 	width: 1.05in;
 	background-color:	#282828;
@@ -639,6 +687,39 @@ h1 {
 	margin-top:0.4in;
 }
 
+.fin1 {
+	width: 1in;
+	background-color:	#282828;
+	border: none;
+	color: white;
+	padding: 0.07in;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 0.14in;
+	margin: 4px 5px;
+	border-radius: 10px;
+	position: relative;
+	margin-top:0in;
+}
+
+
+.fin2 {
+	width: 1in;
+	background-color:	#282828;
+	border: none;
+	color: white;
+	padding: 0.07in;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 0.14in;
+	margin: 4px 5px;
+	border-radius: 10px;
+	position: relative;
+	margin-top:0in;
+}
+
 .option2 {
 	width: 1in;
 	background-color:	#282828;
@@ -670,6 +751,15 @@ h1 {
 	font-size: 0.15in;
 	color:white;
 	margin-left: 0.2in;
+	margin-top: 0.1in;
+}
+
+#deseja {
+	text-align: center;
+	position: absolute;
+	font-size: 0.15in;
+	color:white;
+	margin-left: 0.3in;
 	margin-top: 0.1in;
 }
 

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mapStyle.css">
+    <script src="js.js"></script>
+    <script src="localize.js"></script>
+
+    <title>Interfaces Pessoa Máquina - iRave</title>
+  </head>
+
+
+
+  <body onload="startTime();" onkeypress="displayAlert();">
+
+    <div class="main_screen">
+    <img id="cross2" style="display: none" onclick= "displayAlert();" src="./assets/icons/cross.png">
+
+      <div id="status_bar_Map">
+      	<div id="clock"></div>
+      </div>
+
+      <div class="container">
+        <img id="map" src="./assets/mapaPNG.png">
+        <img id="pin" onload="positionSelfPin()" src="./assets/icons/blue-dot.png" width="18">
+        <div class="mapTexts" id="mapText3">Selecione o ponto de encontro</div>
+        <img class="target" id="target1" onclick='window.location.assign("lockscreen.html")' onload="positionMeetingPointPin('target1')" src="./assets/icons/placeholderMeetingPoint.png" width="30">
+        <img class="target" id="target2" onclick='window.location.assign("lockscreen.html")' onload="positionMeetingPointPin('target2')" src="./assets/icons/placeholderMeetingPoint.png" width="30">
+        <img class="target" id="target3" onclick='window.location.assign("lockscreen.html")' onload="positionMeetingPointPin('target3')" src="./assets/icons/placeholderMeetingPoint.png" width="30">
+      </div>
+
+      <div id="backButton" onclick="goBack()"> </div>
+      <div id="lockButton" onclick='location.assign("lockscreen.html")'> </div>
+
+    </div>
+
+    <img id="watch" src="./assets/xlarge1-114924.jpg">
+
+  </body>
+</html>

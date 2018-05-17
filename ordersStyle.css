@@ -55,3 +55,24 @@
   background-color:	#282828;
 }
 /*-------------------------*/
+
+.menuButtonsPurchase {
+	width: 1.05in;
+	background-color:	#282828;
+	border: none;
+	color: white;
+	padding: 0.03in;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 0.14in;
+	margin: 2px 2px;
+	border-radius: 8px;
+}
+
+#purchaseText {
+  text-align: center;
+  font-size: 15px;
+  margin: 0px;
+  padding: 0.08in;
+}
