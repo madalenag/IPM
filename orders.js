@@ -1,7 +1,7 @@
 /*changes the appearance of the finalizeButton so that it allows the purchase when added an item*/
 
 function allowPurchase() {
-  if(getCarrinho() !== null) {
+  if(getCarrinho().length !== 0) {
     document.getElementById("green_car").style.display = "inline";
     document.getElementById("grey_car").style.display = "none";
   }
@@ -381,7 +381,13 @@ function changeVisibilityRem (order) {
   var att1 = document.createAttribute("class");
   att1.value = "option1";
   yes.setAttributeNode(att1);
-  yes.setAttribute('onclick', ' removeElem(\'' + order + '\'); window.location.assign("showCarrinho.html");');
+  if(getCarrinho().length === 1){
+    yes.setAttribute('onclick', ' removeElem(\'' + order + '\'); window.location.assign("orders.html");');
+    //allowPurchase();
+  }
+
+  else
+    yes.setAttribute('onclick', ' removeElem(\'' + order + '\'); window.location.assign("showCarrinho.html");');
 
   var att2 = document.createAttribute("class");
   att2.value = "option2";
