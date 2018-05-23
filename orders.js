@@ -146,8 +146,91 @@ function showAmountSelecction (order) {
   less.setAttribute('onclick', 'decrementa(\'' + order + '\');')
 
   document.getElementById("confirmButton").setAttribute('onclick', "confirm(" + order + "," + i + "," + prices[order] + ")");
+}
+
+
+
+function editAmountSelecction (order, quantidade, preco) {
+  i = quantidade;
+
+  var buttons = document.getElementsByClassName("container");
+  for (var j = 0; j < buttons.length; j++)
+    buttons[j].style.display = "none";
+
+  var new_saldo;
+
+  if (getSaldo() === null)
+    new_saldo = 0;
+  else
+    new_saldo = getSaldo();
+
+  document.getElementById("preco").style.visibility = "visible";
+  document.getElementById("saldo").style.visibility = "visible";
+  document.getElementById('square').innerHTML = i;
+  document.getElementById('saldo').innerHTML = "Saldo: " + new_saldo + "€";
+  document.getElementById('preco').innerHTML = "Preço: " + preco + "€";
+  document.getElementById("square").style.display = "inline";
+  document.getElementById("add1").style.display = "inline-block";
+  document.getElementById("dontless1").style.display = "inline";
+
+  if (quantidade === 1) {
+    document.getElementById('less1').style.display = "none";
+    document.getElementById('dontless1').style.display = "inline";
+  }
+  else {
+    document.getElementById('less1').style.display = "inline";
+    document.getElementById('dontless1').style.display = "none";
+  }
+
+  var options = document.getElementsByClassName("optionsPurchase");
+  for (var j = 0; j < options.length; j++)
+    options[j].style.display = "inline";
+
+  var elements = document.getElementsByClassName("finalizePurchaseButtons");
+  for(var j=0; j<elements.length; j++)
+    elements[j].style.display = "none";
+
+
+  var add = document.getElementById("add1");
+  add.setAttribute('onclick', "edit_incrementa(" + order + ")");
+
+  var less = document.getElementById("less1");
+  less.setAttribute('onclick', "edit_decrementa(" + order + ")");
+
+  document.getElementById("confirmButton").setAttribute('onclick', "finalizeEdition(" + order + "," + i + "," + prices[order] + ")");
+}
+
+
+function finalizeEdition(order, quant, preco) {
+  var buttons = document.getElementsByClassName("container");
+
+  for (var j = 0; j < buttons.length; j++)
+    buttons[j].style.display = "none";
+
+  document.getElementById("preco").style.visibility = "hidden";
+  document.getElementById("saldo").style.visibility = "hidden";
+  document.getElementById("square").style.display = "none";
+  document.getElementById("add1").style.display = "none";
+  document.getElementById("dontless1").style.display = "none";
+  document.getElementById("less1").style.display = "none";
+
+  var options = document.getElementsByClassName("optionsPurchase");
+  for (var j = 0; j < options.length; j++)
+    options[j].style.display = "none";
+
+
+  var elem = document.getElementsByClassName("carrinhoOnClick");
+  for (var j = 0; j < elem.length; j++)
+    elem[j].style.display = "none";
+
+  var elements = document.getElementsByClassName("finalizePurchaseButtons");
+  for(var j=0; j<elements.length; j++)
+    elements[j].style.display = "inline";
+
+  document.getElementsByClassName("finalizePurchaseButtons")[0].setAttribute('onclick', "confirm_edit(" + order + "," + quant + "," + preco + ")");
 
 }
+
 
 
 function incrementa(order) {
@@ -170,6 +253,25 @@ function incrementa(order) {
 }
 
 
+function edit_incrementa(order) {
+  i++
+  if (i === 1) {
+    document.getElementById('less1').style.display = "none";
+    document.getElementById('dontless1').style.display = "inline";
+  }
+  else {
+    document.getElementById('less1').style.display = "inline";
+    document.getElementById('dontless1').style.display = "none";
+  }
+
+  document.getElementById('square').innerHTML = "" + i + "";
+  var preco = prices[order] * i;
+  document.getElementById('preco').innerHTML = "Preço: " + preco + "€";
+  document.getElementById("confirmButton").setAttribute('onclick', "finalizeEdition(" + order + "," + i + "," + preco+ ")");
+}
+
+
+
 function decrementa(order) {
   i--;
   if (i === 1) {
@@ -185,6 +287,25 @@ function decrementa(order) {
   document.getElementById('preco').innerHTML = "Preço: " + preco + "€";
 
   document.getElementById("confirmButton").setAttribute('onclick', "confirm(" + order + "," + i + "," + preco + ")");
+
+}
+
+
+function edit_decrementa(order) {
+  i--;
+  if (i === 1) {
+    document.getElementById('less1').style.display = "none";
+    document.getElementById('dontless1').style.display = "inline";
+  }
+  else {
+    document.getElementById('less1').style.display = "inline";
+    document.getElementById('dontless1').style.display = "none";
+  }
+  document.getElementById('square').innerHTML = "" + i + "";
+  var preco = prices[order] * i;
+  document.getElementById('preco').innerHTML = "Preço: " + preco + "€";
+
+  document.getElementById("confirmButton").setAttribute('onclick', "finalizeEdition(" + order + "," + i + "," + preco + ")");
 
 }
 
@@ -225,6 +346,40 @@ function confirm(order, i, price) {
 }
 
 
+function confirm_edit(order, i, price) {
+  var old_saldo;
+  if (getSaldo() === null)
+    old_saldo = 30;
+  else
+    old_saldo = getSaldo();
+
+    if (getCarrinho() === null) {
+      carrinho.push(orders[order]);
+      loadCarrinho(carrinho);
+      carr_quant[order] = i;
+      loadQuantidade(carr_quant);
+      carr_precos[order] = price;
+      loadPrecos(carr_precos);
+    }
+    else {
+      var carr = getCarrinho();
+      var precos = getPrecos();
+      var quant = getQuantidade();
+
+      var idx = carr.indexOf(orders[order]);
+      if (idx === -1) {
+        carr.push(orders[order]);
+        loadCarrinho(carr);
+      }
+      quant[order] = i;
+      precos[order] = price;
+      loadPrecos(precos);
+      loadQuantidade(quant);
+    }
+    location.assign("showCarrinho.html");
+}
+
+
 function addButton (order) {
   var button = document.createElement("BUTTON");
   var att1 = document.createAttribute("class");
@@ -249,11 +404,45 @@ function addButton (order) {
   scrollbar.appendChild(button);
 }
 
-function cenas() {
+
+function editButton (order) {
+  var button = document.createElement("BUTTON");
+  var att1 = document.createAttribute("class");
+  att1.value = "eventbutton";
+  button.setAttributeNode(att1);
+
+  var quantidade = getQuantidade();
+  var precos = getPrecos();
+
+  var img = document.createElement("IMG");
+  img.src = imgs[order];
+  var att2 = document.createAttribute("class");
+  att2.value = "eventIcons";
+  img.setAttributeNode(att2);
+  button.appendChild(img);
+  button.appendChild(document.createTextNode( " " + orders[order]));
+
+  button.setAttribute('onclick', 'editAmountSelecction(\'' + order + '\', \'' + quantidade[order] + '\', \'' + precos[order] + '\');');
+
+
+  var scrollbar = document.getElementsByClassName("scrollbar")[0];
+  scrollbar.appendChild(button);
+}
+
+function showCarrinho() {
   var carr = getCarrinho();
   if (carr != null) {
     for (let j = 0; j < carr.length; j++)
       addButton(orders.indexOf(carr[j]));
+  }
+}
+
+
+function editCarrinho() {
+  var carr = getCarrinho();
+  if (carr != null) {
+    for (let j = 0; j < carr.length; j++)
+      editButton(orders.indexOf(carr[j]));
   }
 }
 

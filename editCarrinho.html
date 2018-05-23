@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="alerts.css">
+    <link rel="stylesheet" href="ordersStyle.css">
     <script src="js.js"></script>
     <script src="alerts.js"></script>
     <script src="orders.js"></script>
@@ -22,18 +23,38 @@
       
       <div id="status_bar">
         <div id="clock"></div>
-        <img id="cross1" onclick="exitTimers('mapText1')" src="./assets/icons/cross.png">
         <img class ="imgstatus" id="alerts" src="./assets/icons/pin.png">
         <img class ="imgstatus" id="alerts1" style="left: 0.5cm;" src="./assets/icons/alarmbell.png">
       </div>
       
 
-      <div id="container">
-        <button class="timesBubbles1" id="bubble1"></button>
+      <div class="container">
         <div class="scrollbar" id="scrollbar-style"> 
          <button class="menuName" > <img class="menuIcons" style="float: left" id ="recintoIcon" > <div class="nomes" style="display: inline-block;"> Carrinho </div> </button>
          </div>
       </div>
+
+        <div class="finalizePurchaseButtons" style="display: none;">
+        <div class="scrollbar" id="scrollbar-hidden">
+          <p id="purchaseText" style="color: white;"> Efetuar as alterações? </p>
+          <button class="fin1"> Sim</button>
+          <button class="fin2" onclick='window.location = "editCarrinho.html"'>Não</button>
+        </div>
+      </div>
+
+
+      <div class="containerSelection">
+          <div id="preco"> </div>
+          <div id="saldo"> </div>
+          <div id="square"> </div>
+          <img class="imgas" id="add1" onclick='edit_incrementa()' src="./assets/icons/add.png">
+          <img class="imgas" id="less1" onclick='edit_decrementa()' src="./assets/icons/less.png">
+          <img class="imgas" id="dontless1" src="./assets/icons/less.png">
+          <button class="optionsPurchase" id="confirmButton">Ok</button>
+          <button class="optionsPurchase" id="denyButton">Cancel</button>
+      </div>
+
+
 
       <div id="backButton" onclick='window.location="purchaseMenu.html"'> </div>
       <div id="lockButton" onclick='home()'> </div>
