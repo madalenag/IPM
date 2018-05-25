@@ -80,6 +80,12 @@
   margin-left: 0in;
   background-color:	#282828;
 }
+
+#confirmButton2 {
+}
+
+#denyButton2 {
+}
 /*-------------------------*/
 
 .menuButtonsPurchase {
@@ -108,6 +114,17 @@
   font-size: 15px;
   margin: 0px;
   padding: 0.08in;
+  color: white;
+  font-weight: bold;
+}
+
+#purchaseText3 {
+  position: relative;
+  top: -0.24in;
+  text-align: center;
+  font-size: 15px;
+  margin: 0px;
+  padding-bottom: 0.08in;
   color: white;
   font-weight: bold;
 }
@@ -219,4 +236,20 @@
 
 #edit{
   top: 0.2in;
+}
+
+.confirmButtons {
+  position: relative;
+  top: -0.29in;
+	width: 1.05in;
+	background-color:	#282828;
+	border: none;
+	color: white;
+	padding: 0.065in;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 0.14in;
+	margin: 0px 2px 3px 3px;
+	border-radius: 8px;
 }

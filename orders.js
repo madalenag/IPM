@@ -519,6 +519,17 @@ function contaSaldo(){
   document.getElementById('saldoConta').innerHTML = "Saldo: " + sald + "€";
 }
 
+/* conta.html */
+
+function contaSaldo(){
+  var sald;
+  if (getSaldo()===null)
+    sald = 0
+  else
+    sald = getSaldo();
+  document.getElementById('saldoConta').innerHTML = "Saldo: " + sald + "€";
+}
+
 function carregarSaldo(money){
   var sald;
   if (getSaldo()===null)
@@ -526,9 +537,27 @@ function carregarSaldo(money){
   else
     sald = getSaldo();
   sald += money;
-  loadSaldo(sald);
-  window.location.assign("carregamentoBemSucedido.html")
+  confirmSaldo(money, sald);
+}
 
+function confirmSaldo(money, sald) {
+  document.getElementById('purchaseText3').innerHTML = "Carregar conta com " + money + "€?";
+  document.getElementById('purchaseText3').style.visibility = "visible";
+  var yes = document.getElementById('confirmButton2');
+  yes.style.visibility = "visible";
+  var no = document.getElementById('denyButton2');
+  no.style.visibility = "visible";
+  var elements = document.getElementsByClassName("container");
+  for (var i = 0; i < elements.length; i++) {
+    elements[i].style.visibility = "hidden";
+  }
+  yes.setAttribute('onclick', "loadSaldoToSuccess(" + sald + ")");
+  no.setAttribute('onclick', 'window.location.assign("conta.html");');
+}
+
+function loadSaldoToSuccess(sald) {
+  loadSaldo(sald);
+  window.location.assign("carregamentoBemSucedido.html");
 }
 
 
