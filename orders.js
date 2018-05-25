@@ -173,7 +173,7 @@ function editAmountSelecction (order, quantidade, preco) {
   document.getElementById("add1").style.display = "inline-block";
   document.getElementById("dontless1").style.display = "inline";
 
-  if (quantidade === 1) {
+  if (quantidade == 1) {
     document.getElementById('less1').style.display = "none";
     document.getElementById('dontless1').style.display = "inline";
   }
@@ -227,7 +227,7 @@ function finalizeEdition(order, quant, preco) {
   for(var j=0; j<elements.length; j++)
     elements[j].style.display = "inline";
 
-  document.getElementsByClassName("finalizePurchaseButtons")[0].setAttribute('onclick', "confirm_edit(" + order + "," + quant + "," + preco + ")");
+  document.getElementById("confirmar").setAttribute('onclick', "confirm_edit(" + order + "," + quant + "," + preco + ")");
 
 }
 
@@ -376,7 +376,7 @@ function confirm_edit(order, i, price) {
       loadPrecos(precos);
       loadQuantidade(quant);
     }
-    location.assign("showCarrinho.html");
+    location.assign("editCarrinho.html");
 }
 
 

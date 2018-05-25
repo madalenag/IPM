@@ -16,7 +16,7 @@
 
 
 
-  <body onload="startTime(); checkLocation(); contaSaldo();"  onkeypress="displayAlert();">
+  <body onload="startTime(); checkLocation();"  onkeypress="displayAlert();">
 
     <div class="main_screen">
     <img id="cross2" style="display: none" onclick= "displayAlert();" src="./assets/icons/cross.png">
@@ -28,16 +28,14 @@
       </div>
 
       <div class="container">
-        <div id="saldoConta"> </div>
 
-        <button id="carregarSaldo" onclick='window.location.assign("carregarSaldo.html");'>
-          <img id="money" src="./assets/icons/money.png"> 
-          <div id = "carregar"> Carregar </div> 
-        </button>
+        <button class="removeEdit" id="remove" onclick='window.location.assign("removeCarrinho.html")'>Remover produto</button>
+        <button class="removeEdit" id="edit" onclick='window.location.assign("editCarrinho.html")'>Alterar quantidade</button>
+
 
       </div>
 
-      <div id="backButton" onclick='window.location.assign("orders.html")'> </div>
+      <div id="backButton" onclick='location.assign("orders.html")'> </div>
       <div id="lockButton" onclick='window.location.assign("lockscreen.html")'> </div>
 
     </div>

@@ -199,3 +199,24 @@
   left: 0.57in;
   top: 0.9in;
 }
+
+/* removeOrEdit.html */
+
+.removeEdit {
+  position: relative;
+  top: 0.1in;
+  left: 0.05in;
+  width: 1in;
+  height: 0.45in;
+  background-color: #282828;
+  border: none;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  border-radius: 10px;
+  font-size: 0.15in;
+}
+
+#edit{
+  top: 0.2in;
+}
